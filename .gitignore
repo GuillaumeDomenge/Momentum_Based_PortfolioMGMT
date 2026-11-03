@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/raw/*.manifest.json
+!data/processed/.gitkeep
+!data/processed/annual_membership.csv
+!data/processed/membership_coverage.csv
+reports/*.html
+reports/*.png
+reports/*.pdf
+reports/baseline/

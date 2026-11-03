@@ -1,0 +1,23 @@
+strategy:
+  lookback_months: 12
+  skip_months: 1
+  quantile: 0.10
+  long_only: false
+  rebalance_frequency: "ME"
+costs:
+  one_way_bps: 10
+  annual_short_borrow_bps: 30
+evaluation:
+  annualization_factor: 12
+  risk_free_annual_rate: 0.00
+data:
+  price_file: "data/raw/prices.csv"
+  membership_file: "data/processed/annual_membership.csv"
+  membership_coverage_file: "data/processed/membership_coverage.csv"
+  membership_history_file: "data/raw/sp500_historical_components.csv"
+  price_column: "adjusted_close"
+  source: "yfinance"
+  start: "2014-01-01"
+  end: "2026-11-01"
+  universe_mode: "annual_lagged_sp500"
+  membership_history_url: "https://raw.githubusercontent.com/fja05680/sp500/master/S%26P%20500%20Historical%20Components%20%26%20Changes%20%28Updated%29.csv"

@@ -1,0 +1,14 @@
+,value
+gross_observations,141.0
+gross_cagr,-0.013095890817252709
+gross_volatility,0.24373445804152885
+gross_sharpe,0.07152911484168956
+gross_max_drawdown,-0.6081862544680503
+net_observations,141.0
+net_cagr,-0.03116615291154956
+net_volatility,0.24379047383344726
+net_sharpe,-0.003923326572668521
+net_max_drawdown,-0.6628748163915914
+average_monthly_traded_notional,1.282548307023641
+annualized_average_trading_cost,0.015390579684283692
+annualized_average_borrow_cost,0.003

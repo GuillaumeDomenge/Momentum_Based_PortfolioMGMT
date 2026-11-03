@@ -1,0 +1,44 @@
+import numpy as np
+import pandas as pd
+import pytest
+
+from quant_momentum.backtest import run_backtest
+
+
+def test_backtest_lags_weights_and_reconciles_costs():
+    dates = pd.date_range("2018-01-31", periods=24, freq="ME")
+    monthly_growth = np.array([1.02, 1.01, 1.00, 0.99])
+    prices = pd.DataFrame(
+        {f"S{i}": 100 * np.cumprod(np.repeat(growth, len(dates))) for i, growth in enumerate(monthly_growth)},
+        index=dates,
+    )
+    result = run_backtest(
+        prices,
+        lookback_months=4,
+        skip_months=1,
+        quantile=0.25,
+        one_way_bps=10,
+        annual_short_borrow_bps=0,
+    )
+
+    assert not result.returns.empty
+    assert (result.returns["gross_return"] > 0).all()
+    expected_net = result.returns["gross_return"] - result.returns["trading_cost"]
+    pd.testing.assert_series_equal(result.returns["net_return"], expected_net, check_names=False)
+
+
+def test_backtest_rejects_missing_return_for_held_security():
+    dates = pd.date_range("2018-01-31", periods=12, freq="ME")
+    prices = pd.DataFrame(
+        {
+            "A": 100 * np.cumprod(np.repeat(1.02, len(dates))),
+            "B": 100 * np.cumprod(np.repeat(1.01, len(dates))),
+            "C": 100 * np.cumprod(np.repeat(1.00, len(dates))),
+            "D": 100 * np.cumprod(np.repeat(0.99, len(dates))),
+        },
+        index=dates,
+    )
+    prices.loc[dates[-1], "A"] = np.nan
+
+    with pytest.raises(ValueError, match="Missing return for held security A"):
+        run_backtest(prices, lookback_months=4, skip_months=1, quantile=0.25)
