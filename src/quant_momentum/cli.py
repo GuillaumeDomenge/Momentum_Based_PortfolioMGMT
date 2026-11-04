@@ -31,6 +31,7 @@ def main() -> None:
         lookback_months=config["strategy"]["lookback_months"],
         skip_months=config["strategy"]["skip_months"],
         quantile=config["strategy"]["quantile"],
+        max_positions=config["strategy"].get("max_positions"),
         long_only=config["strategy"]["long_only"],
         one_way_bps=config["costs"]["one_way_bps"],
         annual_short_borrow_bps=config["costs"]["annual_short_borrow_bps"],

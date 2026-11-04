@@ -11,7 +11,7 @@ Does a diversified portfolio of stocks with strong 12-month returns (excluding t
 - **Universe:** for calendar year `Y`, the final available S&P 500 snapshot from year `Y-1`, frozen for the year.
 - **Signal:** cumulative return from month `t-12` through `t-2` (12-1 momentum).
 - **Rebalance:** monthly, using only data available at the rebalance date.
-- **Portfolio:** equal-weight top decile long and bottom decile short; configurable long-only mode.
+- **Portfolio:** equal-weight top decile long and bottom decile short, capped at 30 total positions (15 per side); configurable long-only mode.
 - **Frictions:** one-way transaction cost and optional short borrow cost.
 - **Evaluation:** CAGR, volatility, Sharpe ratio, max drawdown, turnover, benchmark beta/alpha, and robustness checks.
 

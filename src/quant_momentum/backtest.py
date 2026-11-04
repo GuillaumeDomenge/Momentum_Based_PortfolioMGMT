@@ -22,6 +22,7 @@ def run_backtest(
     lookback_months: int = 12,
     skip_months: int = 1,
     quantile: float = 0.10,
+    max_positions: int | None = None,
     long_only: bool = False,
     one_way_bps: float = 10.0,
     annual_short_borrow_bps: float = 30.0,
@@ -40,7 +41,12 @@ def run_backtest(
     if eligibility is not None:
         eligibility = eligibility.reindex_like(signals).fillna(False).astype(bool)
         signals = signals.where(eligibility)
-    target_weights = build_weights(signals, quantile=quantile, long_only=long_only)
+    target_weights = build_weights(
+        signals,
+        quantile=quantile,
+        long_only=long_only,
+        max_positions=max_positions,
+    )
     held_weights = target_weights.shift(1).fillna(0.0)
     asset_returns = monthly_prices.pct_change(fill_method=None)
 

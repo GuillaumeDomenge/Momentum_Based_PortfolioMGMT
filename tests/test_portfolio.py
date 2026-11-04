@@ -19,3 +19,11 @@ def test_turnover_measures_total_traded_notional():
     previous = pd.Series({"A": 0.5, "B": -0.5})
     current = pd.Series({"A": 0.0, "B": 0.0})
     assert turnover(previous, current) == 1.0
+
+
+def test_position_cap_limits_large_universe_to_thirty_names():
+    signal = pd.Series({f"S{i}": float(i) for i in range(500)})
+    weights = decile_weights(signal, quantile=0.10, max_positions=30)
+    assert weights.gt(0).sum() == 15
+    assert weights.lt(0).sum() == 15
+    assert weights.ne(0).sum() == 30

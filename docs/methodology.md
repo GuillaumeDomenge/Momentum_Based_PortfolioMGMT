@@ -14,6 +14,7 @@ The target formed at `t` is held from `t` to `t+1`. Code enforces this with a on
 
 - Freeze each year's eligible universe from the last membership snapshot in the previous calendar year.
 - Long the highest-signal decile and short the lowest-signal decile.
+- Cap the long-short portfolio at 30 names: at most 15 longs and 15 shorts.
 - Equal weight within each side.
 - Target gross exposure is 200% and target net exposure is 0%.
 - A configurable long-only variant supports settings where shorting assumptions cannot be defended.

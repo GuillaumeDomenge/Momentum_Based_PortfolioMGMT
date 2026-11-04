@@ -2,6 +2,7 @@ strategy:
   lookback_months: 12
   skip_months: 1
   quantile: 0.10
+  max_positions: 30
   long_only: false
   rebalance_frequency: "ME"
 costs:
