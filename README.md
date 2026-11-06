@@ -42,10 +42,15 @@ momentum-backtest --config config.yaml --output reports/baseline
 momentum-optimize --config config.yaml --output reports/optimization
 ```
 
-The price pipeline requests the expanded 2000–2026 historical universe from Yahoo first. Symbols for which Yahoo returns no history are eligible for a Tiingo fallback. Tiingo downloads are resumable and capped at 45 symbols per run to remain below the free plan's 50-request hourly limit. Set the API token only in the local environment:
+The price pipeline requests the expanded 2000–2026 historical universe from Yahoo first. Symbols for which Yahoo returns no history are eligible for a Tiingo fallback. Tiingo downloads are resumable and capped at 45 symbols per run to remain below the free plan's 50-request hourly limit. Add the token to the local, Git-ignored `.env` file:
+
+```dotenv
+TIINGO_API_TOKEN=your_token_here
+```
+
+Then run:
 
 ```powershell
-$env:TIINGO_API_TOKEN = Read-Host "Tiingo API token"
 momentum-fill-tiingo --config config.yaml
 ```
 

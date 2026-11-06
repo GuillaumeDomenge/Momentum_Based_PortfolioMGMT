@@ -8,6 +8,7 @@ from urllib.parse import quote
 
 import pandas as pd
 import requests
+from dotenv import load_dotenv
 
 from quant_momentum.config import load_config
 
@@ -93,6 +94,7 @@ def _load_tiingo_cache(cache_directory: Path) -> pd.DataFrame:
 
 
 def main() -> None:
+    load_dotenv()
     parser = argparse.ArgumentParser(description="Fill missing Yahoo histories with Tiingo.")
     parser.add_argument("--config", default="config.yaml", help="Path to YAML configuration.")
     parser.add_argument(
