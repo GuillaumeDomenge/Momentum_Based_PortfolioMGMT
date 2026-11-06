@@ -37,3 +37,9 @@ Adjusted prices must be positive and unique by date/security. A held security wi
 Choose the final holdout period before robustness testing. Report gross and net results, turnover, CAGR, annualized volatility, Sharpe ratio, and maximum drawdown. Add benchmark/factor regressions only after the return pipeline is independently reconciled.
 
 Parameter grids are robustness checks, not a search for the best-looking backtest. Every tested variation should be reported or mechanically summarized.
+
+## Parameter training and holdout
+
+The declared grid varies momentum lookback (6, 9, or 12 months), total position cap (10, 20, or 30), and rebalance interval (monthly or quarterly). It holds the one-month skip, 10% tail rule, and cost assumptions fixed. Every candidate is ranked by net Sharpe over the identical February 2015–December 2022 window. Earlier prices initialize signals only. The selected configuration is subsequently evaluated from January 2023 onward; holdout metrics never participate in selection.
+
+Selection means “best under the declared objective,” not necessarily profitable. The report explicitly counts candidates with positive training CAGR and warns when there are none.

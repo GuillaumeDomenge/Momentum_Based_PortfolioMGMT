@@ -6,7 +6,7 @@ import pandas as pd
 from quant_momentum.backtest import run_backtest
 from quant_momentum.config import load_config
 from quant_momentum.data import load_price_panel, to_monthly_prices
-from quant_momentum.metrics import performance_summary
+from quant_momentum.reporting import strategy_summary
 from quant_momentum.universe import eligibility_panel
 
 
@@ -33,32 +33,14 @@ def main() -> None:
         quantile=config["strategy"]["quantile"],
         max_positions=config["strategy"].get("max_positions"),
         long_only=config["strategy"]["long_only"],
+        rebalance_months=config["strategy"].get("rebalance_months", 1),
         one_way_bps=config["costs"]["one_way_bps"],
         annual_short_borrow_bps=config["costs"]["annual_short_borrow_bps"],
     )
-    gross_summary = performance_summary(
-        result.returns["gross_return"],
+    summary = strategy_summary(
+        result.returns,
         periods_per_year=config["evaluation"]["annualization_factor"],
         risk_free_annual_rate=config["evaluation"]["risk_free_annual_rate"],
-    ).add_prefix("gross_")
-    net_summary = performance_summary(
-        result.returns["net_return"],
-        periods_per_year=config["evaluation"]["annualization_factor"],
-        risk_free_annual_rate=config["evaluation"]["risk_free_annual_rate"],
-    ).add_prefix("net_")
-    implementation_summary = {
-        "average_monthly_traded_notional": result.returns["traded_notional"].mean(),
-        "annualized_average_trading_cost": (
-            result.returns["trading_cost"].mean()
-            * config["evaluation"]["annualization_factor"]
-        ),
-        "annualized_average_borrow_cost": (
-            result.returns["borrow_cost"].mean()
-            * config["evaluation"]["annualization_factor"]
-        ),
-    }
-    summary = pd.concat(
-        [gross_summary, net_summary, pd.Series(implementation_summary, dtype=float)]
     )
 
     output = Path(args.output)

@@ -42,3 +42,25 @@ def test_backtest_rejects_missing_return_for_held_security():
 
     with pytest.raises(ValueError, match="Missing return for held security A"):
         run_backtest(prices, lookback_months=4, skip_months=1, quantile=0.25)
+
+
+def test_quarterly_rebalance_has_no_intermediate_trades():
+    dates = pd.date_range("2018-01-31", periods=18, freq="ME")
+    prices = pd.DataFrame(
+        {
+            "A": 100 * np.cumprod(np.repeat(1.03, len(dates))),
+            "B": 100 * np.cumprod(np.repeat(1.01, len(dates))),
+            "C": 100 * np.cumprod(np.repeat(0.99, len(dates))),
+            "D": 100 * np.cumprod(np.repeat(0.97, len(dates))),
+        },
+        index=dates,
+    )
+    result = run_backtest(
+        prices,
+        lookback_months=4,
+        skip_months=1,
+        quantile=0.25,
+        rebalance_months=3,
+    )
+    charged_rebalance_months = result.returns.index.month.isin([2, 5, 8, 11])
+    assert result.returns.loc[~charged_rebalance_months, "traded_notional"].eq(0).all()

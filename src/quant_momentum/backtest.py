@@ -24,6 +24,7 @@ def run_backtest(
     quantile: float = 0.10,
     max_positions: int | None = None,
     long_only: bool = False,
+    rebalance_months: int = 1,
     one_way_bps: float = 10.0,
     annual_short_borrow_bps: float = 30.0,
 ) -> BacktestResult:
@@ -36,32 +37,46 @@ def run_backtest(
         raise ValueError("monthly_prices must not be empty.")
     if one_way_bps < 0 or annual_short_borrow_bps < 0:
         raise ValueError("Cost assumptions must be non-negative.")
+    if rebalance_months < 1 or 12 % rebalance_months != 0:
+        raise ValueError("rebalance_months must be a positive divisor of 12.")
 
     signals = momentum_12_1(monthly_prices, lookback_months, skip_months)
     if eligibility is not None:
         eligibility = eligibility.reindex_like(signals).fillna(False).astype(bool)
         signals = signals.where(eligibility)
-    target_weights = build_weights(
+    proposed_weights = build_weights(
         signals,
         quantile=quantile,
         long_only=long_only,
         max_positions=max_positions,
     )
-    held_weights = target_weights.shift(1).fillna(0.0)
     asset_returns = monthly_prices.pct_change(fill_method=None)
+    scheduled = (monthly_prices.index.month - 1) % rebalance_months == 0
+    target_weights = pd.DataFrame(0.0, index=monthly_prices.index, columns=monthly_prices.columns)
+    held_weights = target_weights.copy()
+    gross_return = pd.Series(0.0, index=monthly_prices.index)
+    formation_traded_notional = pd.Series(0.0, index=monthly_prices.index)
+    previous_weights = pd.Series(0.0, index=monthly_prices.columns)
 
-    missing_held_returns = held_weights.ne(0) & asset_returns.isna()
-    if missing_held_returns.any().any():
-        first_date, first_ticker = missing_held_returns.stack().loc[lambda x: x].index[0]
-        raise ValueError(
-            f"Missing return for held security {first_ticker} at {first_date}. "
-            "Resolve listings, delistings, and data gaps before backtesting."
-        )
+    for position, date in enumerate(monthly_prices.index):
+        held_weights.loc[date] = previous_weights
+        period_returns = asset_returns.loc[date]
+        missing = previous_weights.ne(0) & period_returns.isna()
+        if missing.any():
+            first_ticker = missing.loc[missing].index[0]
+            raise ValueError(
+                f"Missing return for held security {first_ticker} at {date}. "
+                "Resolve listings, delistings, and data gaps before backtesting."
+            )
+        safe_returns = period_returns.where(previous_weights.ne(0), 0.0)
+        period_gross_return = (previous_weights * safe_returns).sum()
+        gross_return.loc[date] = period_gross_return
+        drifted_weights = previous_weights * (1 + safe_returns) / (1 + period_gross_return)
+        current_weights = proposed_weights.loc[date] if scheduled[position] else drifted_weights
+        formation_traded_notional.loc[date] = current_weights.sub(drifted_weights).abs().sum()
+        target_weights.loc[date] = current_weights
+        previous_weights = current_weights
 
-    gross_return = (held_weights * asset_returns).sum(axis=1, min_count=1).fillna(0.0)
-    safe_asset_returns = asset_returns.where(held_weights.ne(0), 0.0)
-    drifted_weights = held_weights.mul(1 + safe_asset_returns).div(1 + gross_return, axis=0)
-    formation_traded_notional = target_weights.sub(drifted_weights).abs().sum(axis=1)
     charged_traded_notional = formation_traded_notional.shift(1).fillna(0.0)
     trading_cost = charged_traded_notional * one_way_bps / 10_000
     short_exposure = held_weights.clip(upper=0).abs().sum(axis=1)

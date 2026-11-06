@@ -4,13 +4,22 @@ strategy:
   quantile: 0.10
   max_positions: 30
   long_only: false
-  rebalance_frequency: "ME"
+  rebalance_months: 1
 costs:
   one_way_bps: 10
   annual_short_borrow_bps: 30
 evaluation:
   annualization_factor: 12
   risk_free_annual_rate: 0.00
+optimization:
+  train_start: "2015-02-28"
+  train_end: "2022-12-31"
+  objective: "net_sharpe"
+  grid:
+    lookback_months: [6, 9, 12]
+    skip_months: [1]
+    max_positions: [10, 20, 30]
+    rebalance_months: [1, 3]
 data:
   price_file: "data/raw/prices.csv"
   membership_file: "data/processed/annual_membership.csv"

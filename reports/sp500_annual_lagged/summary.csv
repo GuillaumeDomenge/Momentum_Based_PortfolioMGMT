@@ -10,5 +10,5 @@ net_volatility,0.3488512659138651
 net_sharpe,0.13663955042423317
 net_max_drawdown,-0.7135937651308903
 average_monthly_traded_notional,1.478737982177315
-annualized_average_trading_cost,0.017744855786127785
-annualized_average_borrow_cost,0.003
+annualized_average_trading_cost,0.01774485578612778
+annualized_average_borrow_cost,0.002999999999999999

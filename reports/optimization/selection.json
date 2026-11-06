@@ -1,0 +1,16 @@
+{
+  "selected_parameters": {
+    "lookback_months": 9,
+    "skip_months": 1,
+    "max_positions": 10,
+    "rebalance_months": 3
+  },
+  "objective": "net_sharpe",
+  "train_start_inclusive": "2015-02-28",
+  "train_end_inclusive": "2022-12-31",
+  "test_start_exclusive_of_train_end": true,
+  "candidate_count": 18,
+  "profitable_training_candidate_count": 0,
+  "selected_training_net_cagr": -0.06829336380465234,
+  "selected_training_net_sharpe": 0.15444396401343743
+}
