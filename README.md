@@ -42,7 +42,7 @@ momentum-backtest --config config.yaml --output reports/baseline
 momentum-optimize --config config.yaml --output reports/optimization
 ```
 
-The price pipeline requests the expanded 2000–2026 historical universe from Yahoo first. Symbols for which Yahoo returns no history are eligible for a Tiingo fallback. Tiingo downloads are resumable and capped at 45 symbols per run to remain below the free plan's 50-request hourly limit. Add the token to the local, Git-ignored `.env` file:
+The price pipeline requests the expanded 2000–2026 historical universe from Yahoo first. Symbols for which Yahoo returns no history are eligible for a Tiingo fallback. Tiingo downloads are resumable and capped at 50 symbols per hourly batch. Add the token to the local, Git-ignored `.env` file:
 
 ```dotenv
 TIINGO_API_TOKEN=your_token_here
@@ -54,7 +54,13 @@ Then run:
 momentum-fill-tiingo --config config.yaml
 ```
 
-Repeat the fill command after the provider's hourly quota resets. Each Tiingo history replaces that ticker's Yahoo history completely, avoiding mixed adjustment conventions within a security. Raw vendor data and tokens are never committed.
+The guarded batch script refreshes `data/processed/tiingo_remaining.csv`, checks that no requests were made in the preceding hour, and attempts up to 50 previously unattempted symbols:
+
+```powershell
+.\scripts\fetch-tiingo-batch.ps1
+```
+
+Repeat it after the provider's hourly quota resets. Each Tiingo history replaces that ticker's Yahoo history completely, avoiding mixed adjustment conventions within a security. Raw vendor data and tokens are never committed.
 
 The optimizer evaluates a declared parameter grid over the same February 2015–December 2022 training window, selects by net Sharpe, and then reports the untouched later holdout period separately. Earlier prices initialize longer signals but do not enter candidate scores. The test runs from January 2023 onward. Transaction-cost assumptions are fixed rather than optimized.
 

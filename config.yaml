@@ -24,6 +24,7 @@ data:
   price_file: "data/raw/prices.csv"
   yahoo_price_file: "data/raw/prices_yahoo.csv"
   tiingo_cache_dir: "data/raw/tiingo"
+  tiingo_remaining_file: "data/processed/tiingo_remaining.csv"
   price_source_file: "data/processed/price_sources.csv"
   membership_file: "data/processed/annual_membership.csv"
   membership_coverage_file: "data/processed/membership_coverage.csv"
@@ -37,4 +38,4 @@ data:
   membership_history_url: "https://raw.githubusercontent.com/fja05680/sp500/master/S%26P%20500%20Historical%20Components%20%26%20Changes%20%28Updated%29.csv"
   tiingo:
     token_environment_variable: "TIINGO_API_TOKEN"
-    max_symbols_per_run: 45
+    max_symbols_per_run: 50

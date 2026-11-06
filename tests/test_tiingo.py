@@ -4,6 +4,7 @@ from quant_momentum.tiingo import (
     download_tiingo_prices,
     merge_price_sources,
     missing_tickers,
+    write_remaining_queue,
 )
 
 
@@ -55,3 +56,16 @@ def test_tiingo_history_replaces_yahoo_for_same_ticker():
     combined, sources = merge_price_sources(yahoo, tiingo)
     assert combined.loc[combined["ticker"] == "B", "adjusted_close"].item() == 21.0
     assert sources.set_index("ticker").loc["B", "source"] == "tiingo"
+
+
+def test_remaining_queue_separates_failed_and_unattempted(tmp_path):
+    queue = write_remaining_queue(
+        ["A", "B", "C"],
+        {"A"},
+        {"B": {"status": "failed", "attempted_at_utc": "2026-01-01T00:00:00Z"}},
+        tmp_path / "remaining.csv",
+    )
+    assert queue.set_index("ticker")["status"].to_dict() == {
+        "B": "failed",
+        "C": "unattempted",
+    }

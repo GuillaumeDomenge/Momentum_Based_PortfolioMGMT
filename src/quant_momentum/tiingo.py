@@ -93,6 +93,32 @@ def _load_tiingo_cache(cache_directory: Path) -> pd.DataFrame:
     )
 
 
+def write_remaining_queue(
+    candidates: list[str],
+    cached_tickers: set[str],
+    attempts: dict,
+    output: str | Path,
+) -> pd.DataFrame:
+    """Persist every unresolved ticker and whether it has already failed once."""
+    rows = []
+    for ticker in candidates:
+        if ticker in cached_tickers:
+            continue
+        attempt = attempts.get(ticker, {})
+        rows.append(
+            {
+                "ticker": ticker,
+                "status": "failed" if attempt.get("status") == "failed" else "unattempted",
+                "last_attempt_utc": attempt.get("attempted_at_utc", ""),
+            }
+        )
+    queue = pd.DataFrame(rows, columns=["ticker", "status", "last_attempt_utc"])
+    destination = Path(output)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    queue.to_csv(destination, index=False)
+    return queue
+
+
 def main() -> None:
     load_dotenv()
     parser = argparse.ArgumentParser(description="Fill missing Yahoo histories with Tiingo.")
@@ -120,13 +146,19 @@ def main() -> None:
     attempts = json.loads(attempts_path.read_text(encoding="utf-8")) if attempts_path.exists() else {}
     cached_prices = _load_tiingo_cache(cache_directory)
     cached_tickers = set(cached_prices["ticker"].unique())
+    write_remaining_queue(
+        candidates,
+        cached_tickers,
+        attempts,
+        data_config["tiingo_remaining_file"],
+    )
     pending = [ticker for ticker in candidates if ticker not in cached_tickers]
     if not args.retry_failed:
         pending = [ticker for ticker in pending if attempts.get(ticker, {}).get("status") != "failed"]
 
     limit = args.max_symbols or int(tiingo_config.get("max_symbols_per_run", 45))
-    if limit < 1 or limit > 45:
-        raise ValueError("max-symbols must be between 1 and 45 to preserve Tiingo free-tier headroom.")
+    if limit < 1 or limit > 50:
+        raise ValueError("max-symbols must be between 1 and 50.")
     selected = pending[:limit]
     print(
         f"Tiingo fallback: {len(candidates)} Yahoo-missing tickers; "
@@ -162,6 +194,13 @@ def main() -> None:
         attempts_path.write_text(json.dumps(attempts, indent=2) + "\n", encoding="utf-8")
 
     cached_prices = _load_tiingo_cache(cache_directory)
+    cached_tickers = set(cached_prices["ticker"].unique())
+    write_remaining_queue(
+        candidates,
+        cached_tickers,
+        attempts,
+        data_config["tiingo_remaining_file"],
+    )
     combined, sources = merge_price_sources(yahoo_prices, cached_prices)
     output = Path(data_config["price_file"])
     output.parent.mkdir(parents=True, exist_ok=True)

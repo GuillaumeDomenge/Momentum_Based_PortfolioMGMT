@@ -1,63 +1,31 @@
 {
-  "source": "yfinance/Yahoo Finance",
-  "yfinance_version": "1.5.2",
-  "auto_adjust": true,
-  "repair": true,
+  "sources": [
+    "yfinance/Yahoo Finance",
+    "Tiingo EOD"
+  ],
+  "merge_policy": "one vendor per ticker; Tiingo replaces the full Yahoo history",
   "requested_start": "1999-01-01",
   "requested_end_exclusive": "2026-11-01",
-  "universe_method": "final prior-calendar-year S&P 500 snapshot",
-  "membership_source": "https://raw.githubusercontent.com/fja05680/sp500/master/S%26P%20500%20Historical%20Components%20%26%20Changes%20%28Updated%29.csv",
-  "requested_tickers": 1075,
-  "available_tickers": 695,
-  "unavailable_tickers": [
-    "AABA",
-    "AAMRQ",
+  "yahoo_tickers": 695,
+  "tiingo_tickers": 31,
+  "unresolved_tickers": [
     "ABC",
-    "ABKFQ",
-    "ABMD",
     "ABS",
-    "ACAS",
     "ACKH",
-    "ACS",
     "ADS",
-    "AET",
     "AFS-A",
-    "AGC",
-    "AGN",
-    "AKS",
-    "AL",
-    "ALTR",
-    "ALXN",
-    "AMCC",
-    "ANDV",
     "ANDW",
-    "ANRZQ",
-    "ANSS",
     "ANTM",
     "APCC",
-    "APOL",
-    "ARC",
-    "ARG",
-    "ARNC",
     "ASN",
     "ATGE",
-    "ATVI",
-    "AVB",
-    "AVP",
     "AW",
     "AWE",
-    "AYE",
     "AZA-A",
-    "BCR",
     "BDK",
-    "BFO",
     "BGEN",
-    "BGG",
-    "BHGE",
     "BHMSQ",
     "BIG",
-    "BJS",
-    "BK",
     "BLL",
     "BLS",
     "BMC",
@@ -395,169 +363,167 @@
     {
       "portfolio_year": 2000,
       "requested_tickers": 492,
-      "available_tickers": 297,
-      "coverage_ratio": 0.6036585365853658
+      "available_tickers": 311,
+      "coverage_ratio": 0.6321138211382114
     },
     {
       "portfolio_year": 2001,
       "requested_tickers": 492,
-      "available_tickers": 305,
-      "coverage_ratio": 0.6199186991869918
+      "available_tickers": 320,
+      "coverage_ratio": 0.6504065040650406
     },
     {
       "portfolio_year": 2002,
       "requested_tickers": 496,
-      "available_tickers": 306,
-      "coverage_ratio": 0.6169354838709677
+      "available_tickers": 320,
+      "coverage_ratio": 0.6451612903225806
     },
     {
       "portfolio_year": 2003,
       "requested_tickers": 494,
-      "available_tickers": 314,
-      "coverage_ratio": 0.6356275303643725
+      "available_tickers": 329,
+      "coverage_ratio": 0.6659919028340081
     },
     {
       "portfolio_year": 2004,
       "requested_tickers": 494,
-      "available_tickers": 316,
-      "coverage_ratio": 0.6396761133603239
+      "available_tickers": 330,
+      "coverage_ratio": 0.6680161943319838
     },
     {
       "portfolio_year": 2005,
       "requested_tickers": 495,
-      "available_tickers": 314,
-      "coverage_ratio": 0.6343434343434343
+      "available_tickers": 329,
+      "coverage_ratio": 0.6646464646464646
     },
     {
       "portfolio_year": 2006,
       "requested_tickers": 497,
-      "available_tickers": 321,
-      "coverage_ratio": 0.6458752515090543
+      "available_tickers": 336,
+      "coverage_ratio": 0.676056338028169
     },
     {
       "portfolio_year": 2007,
       "requested_tickers": 497,
-      "available_tickers": 328,
-      "coverage_ratio": 0.6599597585513078
+      "available_tickers": 342,
+      "coverage_ratio": 0.6881287726358148
     },
     {
       "portfolio_year": 2008,
       "requested_tickers": 497,
-      "available_tickers": 337,
-      "coverage_ratio": 0.6780684104627767
+      "available_tickers": 354,
+      "coverage_ratio": 0.7122736418511066
     },
     {
       "portfolio_year": 2009,
       "requested_tickers": 498,
-      "available_tickers": 342,
-      "coverage_ratio": 0.6867469879518072
+      "available_tickers": 359,
+      "coverage_ratio": 0.7208835341365462
     },
     {
       "portfolio_year": 2010,
       "requested_tickers": 499,
-      "available_tickers": 349,
-      "coverage_ratio": 0.6993987975951904
+      "available_tickers": 366,
+      "coverage_ratio": 0.7334669338677354
     },
     {
       "portfolio_year": 2011,
       "requested_tickers": 497,
-      "available_tickers": 355,
-      "coverage_ratio": 0.7142857142857143
+      "available_tickers": 370,
+      "coverage_ratio": 0.744466800804829
     },
     {
       "portfolio_year": 2012,
       "requested_tickers": 497,
-      "available_tickers": 365,
-      "coverage_ratio": 0.7344064386317908
+      "available_tickers": 379,
+      "coverage_ratio": 0.7625754527162978
     },
     {
       "portfolio_year": 2013,
       "requested_tickers": 497,
-      "available_tickers": 371,
-      "coverage_ratio": 0.7464788732394366
+      "available_tickers": 385,
+      "coverage_ratio": 0.7746478873239436
     },
     {
       "portfolio_year": 2014,
       "requested_tickers": 497,
-      "available_tickers": 376,
-      "coverage_ratio": 0.7565392354124748
+      "available_tickers": 389,
+      "coverage_ratio": 0.7826961770623743
     },
     {
       "portfolio_year": 2015,
       "requested_tickers": 499,
-      "available_tickers": 381,
-      "coverage_ratio": 0.7635270541082164
+      "available_tickers": 394,
+      "coverage_ratio": 0.7895791583166333
     },
     {
       "portfolio_year": 2016,
       "requested_tickers": 502,
-      "available_tickers": 397,
-      "coverage_ratio": 0.7908366533864541
+      "available_tickers": 409,
+      "coverage_ratio": 0.8147410358565738
     },
     {
       "portfolio_year": 2017,
       "requested_tickers": 506,
-      "available_tickers": 409,
-      "coverage_ratio": 0.808300395256917
+      "available_tickers": 420,
+      "coverage_ratio": 0.8300395256916996
     },
     {
       "portfolio_year": 2018,
-      "requested_tickers": 505,
-      "available_tickers": 417,
-      "coverage_ratio": 0.8257425742574257
-    },
-    {
-      "portfolio_year": 2019,
       "requested_tickers": 505,
       "available_tickers": 427,
       "coverage_ratio": 0.8455445544554455
     },
     {
+      "portfolio_year": 2019,
+      "requested_tickers": 505,
+      "available_tickers": 436,
+      "coverage_ratio": 0.8633663366336634
+    },
+    {
       "portfolio_year": 2020,
       "requested_tickers": 505,
-      "available_tickers": 438,
-      "coverage_ratio": 0.8673267326732673
+      "available_tickers": 446,
+      "coverage_ratio": 0.8831683168316832
     },
     {
       "portfolio_year": 2021,
       "requested_tickers": 505,
-      "available_tickers": 449,
-      "coverage_ratio": 0.8891089108910891
+      "available_tickers": 455,
+      "coverage_ratio": 0.900990099009901
     },
     {
       "portfolio_year": 2022,
       "requested_tickers": 505,
-      "available_tickers": 458,
-      "coverage_ratio": 0.906930693069307
+      "available_tickers": 463,
+      "coverage_ratio": 0.9168316831683169
     },
     {
       "portfolio_year": 2023,
       "requested_tickers": 503,
-      "available_tickers": 472,
-      "coverage_ratio": 0.9383697813121272
+      "available_tickers": 476,
+      "coverage_ratio": 0.9463220675944334
     },
     {
       "portfolio_year": 2024,
       "requested_tickers": 503,
-      "available_tickers": 478,
-      "coverage_ratio": 0.9502982107355865
+      "available_tickers": 481,
+      "coverage_ratio": 0.9562624254473161
     },
     {
       "portfolio_year": 2025,
       "requested_tickers": 503,
-      "available_tickers": 485,
-      "coverage_ratio": 0.9642147117296223
+      "available_tickers": 488,
+      "coverage_ratio": 0.9701789264413518
     },
     {
       "portfolio_year": 2026,
       "requested_tickers": 503,
-      "available_tickers": 493,
-      "coverage_ratio": 0.9801192842942346
+      "available_tickers": 495,
+      "coverage_ratio": 0.9840954274353877
     }
   ],
-  "rows": 3906292,
-  "first_observation": "1999-01-04",
-  "last_observation": "2026-10-30",
-  "fetched_at_utc": "2026-11-06T15:42:36.128393+00:00",
-  "research_warning": "Open-source reconstructed membership and Yahoo price coverage are incomplete; unavailable and delisted symbols require institutional data for final research."
+  "rows": 4023219,
+  "generated_at_utc": "2026-11-06T16:05:14.006093+00:00",
+  "license_warning": "Raw vendor data is for local research and is excluded from Git."
 }
