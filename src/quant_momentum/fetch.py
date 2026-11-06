@@ -91,8 +91,8 @@ def main() -> None:
 
     config = load_config(args.config)
     data_config = config["data"]
-    if data_config.get("source") != "yfinance":
-        raise ValueError("This fetcher requires data.source: yfinance.")
+    if data_config.get("source") not in {"yfinance", "yfinance_tiingo"}:
+        raise ValueError("This fetcher requires a yfinance-based data source.")
 
     if data_config.get("universe_mode") != "annual_lagged_sp500":
         raise ValueError("Expected data.universe_mode: annual_lagged_sp500.")
@@ -100,7 +100,7 @@ def main() -> None:
     history_output = Path(data_config["membership_history_file"])
     history_output.parent.mkdir(parents=True, exist_ok=True)
     history.to_csv(history_output, index=False)
-    start_year = pd.Timestamp(data_config["start"]).year
+    start_year = int(data_config.get("portfolio_start_year", pd.Timestamp(data_config["start"]).year))
     end_year = pd.Timestamp(data_config["end"]).year
     membership = build_annual_lagged_membership(history, start_year, end_year)
     membership_output = Path(data_config["membership_file"])
@@ -127,9 +127,12 @@ def main() -> None:
     coverage_output = Path(data_config["membership_coverage_file"])
     coverage_output.parent.mkdir(parents=True, exist_ok=True)
     coverage.to_csv(coverage_output, index=False)
-    output = Path(data_config["price_file"])
-    output.parent.mkdir(parents=True, exist_ok=True)
-    prices.to_csv(output, index=False)
+    yahoo_output = Path(data_config.get("yahoo_price_file", data_config["price_file"]))
+    yahoo_output.parent.mkdir(parents=True, exist_ok=True)
+    prices.to_csv(yahoo_output, index=False)
+    canonical_output = Path(data_config["price_file"])
+    canonical_output.parent.mkdir(parents=True, exist_ok=True)
+    prices.to_csv(canonical_output, index=False)
 
     manifest = {
         "source": "yfinance/Yahoo Finance",
@@ -153,12 +156,12 @@ def main() -> None:
             "unavailable and delisted symbols require institutional data for final research."
         ),
     }
-    output.with_suffix(".manifest.json").write_text(
-        json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
-    )
+    manifest_text = json.dumps(manifest, indent=2) + "\n"
+    yahoo_output.with_suffix(".manifest.json").write_text(manifest_text, encoding="utf-8")
+    canonical_output.with_suffix(".manifest.json").write_text(manifest_text, encoding="utf-8")
     print(
         f"Wrote {len(prices):,} observations for {prices['ticker'].nunique()} of "
-        f"{len(tickers)} requested tickers to {output}; {len(unavailable)} unavailable."
+        f"{len(tickers)} requested tickers to {yahoo_output}; {len(unavailable)} unavailable."
     )
 
 

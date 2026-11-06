@@ -37,9 +37,19 @@ Fetch the configured prototype universe, then run the baseline:
 
 ```powershell
 momentum-fetch --config config.yaml
+momentum-fill-tiingo --config config.yaml --dry-run
 momentum-backtest --config config.yaml --output reports/baseline
 momentum-optimize --config config.yaml --output reports/optimization
 ```
+
+The price pipeline requests the expanded 2000–2026 historical universe from Yahoo first. Symbols for which Yahoo returns no history are eligible for a Tiingo fallback. Tiingo downloads are resumable and capped at 45 symbols per run to remain below the free plan's 50-request hourly limit. Set the API token only in the local environment:
+
+```powershell
+$env:TIINGO_API_TOKEN = Read-Host "Tiingo API token"
+momentum-fill-tiingo --config config.yaml
+```
+
+Repeat the fill command after the provider's hourly quota resets. Each Tiingo history replaces that ticker's Yahoo history completely, avoiding mixed adjustment conventions within a security. Raw vendor data and tokens are never committed.
 
 The optimizer evaluates a declared parameter grid over the same February 2015–December 2022 training window, selects by net Sharpe, and then reports the untouched later holdout period separately. Earlier prices initialize longer signals but do not enter candidate scores. The test runs from January 2023 onward. Transaction-cost assumptions are fixed rather than optimized.
 

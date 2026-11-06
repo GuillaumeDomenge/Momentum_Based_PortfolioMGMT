@@ -9,7 +9,9 @@ data/processed/*
 !data/processed/.gitkeep
 !data/processed/annual_membership.csv
 !data/processed/membership_coverage.csv
+!data/processed/price_sources.csv
 reports/*.html
 reports/*.png
 reports/*.pdf
 reports/baseline/
+reports/sp500_2000_yahoo_only/

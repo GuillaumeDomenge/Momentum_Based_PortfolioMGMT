@@ -32,6 +32,8 @@ Adjusted prices must be positive and unique by date/security. A held security wi
 - point-in-time availability and revision policy;
 - licensing and reproducibility constraints.
 
+Yahoo is the primary prototype price source. Tiingo is used only for historical members with no Yahoo observations. A security uses one vendor for its complete history; prices are never spliced between vendors. Vendor-specific raw files remain local, while ticker-level provenance and aggregate coverage are recorded separately.
+
 ## Evaluation protocol
 
 Choose the final holdout period before robustness testing. Report gross and net results, turnover, CAGR, annualized volatility, Sharpe ratio, and maximum drawdown. Add benchmark/factor regressions only after the return pipeline is independently reconciled.

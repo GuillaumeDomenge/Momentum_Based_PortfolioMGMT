@@ -11,6 +11,7 @@ dependencies = [
   "numpy>=1.26",
   "pandas>=2.1",
   "PyYAML>=6.0",
+  "requests>=2.31",
   "statsmodels>=0.14",
   "yfinance>=0.2.66,<2",
 ]
@@ -21,6 +22,7 @@ dev = ["pytest>=8.0", "ruff>=0.6"]
 [project.scripts]
 momentum-backtest = "quant_momentum.cli:main"
 momentum-fetch = "quant_momentum.fetch:main"
+momentum-fill-tiingo = "quant_momentum.tiingo:main"
 momentum-optimize = "quant_momentum.optimize:main"
 
 [tool.pytest.ini_options]
