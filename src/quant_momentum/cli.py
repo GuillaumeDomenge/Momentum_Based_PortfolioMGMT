@@ -47,6 +47,7 @@ def main() -> None:
     output.mkdir(parents=True, exist_ok=True)
     result.returns.to_csv(output / "monthly_returns.csv", index_label="date")
     result.target_weights.to_csv(output / "target_weights.csv", index_label="date")
+    result.terminal_liquidations.to_csv(output / "terminal_liquidations.csv", index=False)
     summary.rename("value").to_csv(output / "summary.csv", header=True)
     print(summary.to_string())
 

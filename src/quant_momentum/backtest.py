@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 import pandas as pd
 
@@ -13,6 +13,7 @@ class BacktestResult:
     returns: pd.DataFrame
     target_weights: pd.DataFrame
     signals: pd.DataFrame
+    terminal_liquidations: pd.DataFrame = field(default_factory=pd.DataFrame)
 
 
 def run_backtest(
@@ -44,6 +45,9 @@ def run_backtest(
     if eligibility is not None:
         eligibility = eligibility.reindex_like(signals).fillna(False).astype(bool)
         signals = signals.where(eligibility)
+    # A lagged signal may still exist after a listing ends. Require a current
+    # executable price so a terminally liquidated name cannot be reopened.
+    signals = signals.where(monthly_prices.notna())
     proposed_weights = build_weights(
         signals,
         quantile=quantile,
@@ -56,28 +60,56 @@ def run_backtest(
     held_weights = target_weights.copy()
     gross_return = pd.Series(0.0, index=monthly_prices.index)
     formation_traded_notional = pd.Series(0.0, index=monthly_prices.index)
+    terminal_traded_notional = pd.Series(0.0, index=monthly_prices.index)
+    terminal_liquidation_count = pd.Series(0, index=monthly_prices.index, dtype=int)
+    terminal_events: list[dict[str, object]] = []
     previous_weights = pd.Series(0.0, index=monthly_prices.columns)
+    last_price_dates = {
+        ticker: monthly_prices[ticker].last_valid_index() for ticker in monthly_prices.columns
+    }
 
     for position, date in enumerate(monthly_prices.index):
         held_weights.loc[date] = previous_weights
         period_returns = asset_returns.loc[date]
         missing = previous_weights.ne(0) & period_returns.isna()
         if missing.any():
-            first_ticker = missing.loc[missing].index[0]
-            raise ValueError(
-                f"Missing return for held security {first_ticker} at {date}. "
-                "Resolve listings, delistings, and data gaps before backtesting."
-            )
+            missing_tickers = missing.loc[missing].index
+            terminal = [ticker for ticker in missing_tickers if last_price_dates[ticker] < date]
+            internal_gaps = missing_tickers.difference(terminal)
+            if not internal_gaps.empty:
+                first_ticker = internal_gaps[0]
+                raise ValueError(
+                    f"Missing return for held security {first_ticker} at {date}. "
+                    "A later price exists, so this is a data gap rather than a terminal listing."
+                )
+
+            for ticker in terminal:
+                terminal_events.append(
+                    {
+                        "liquidation_date": date,
+                        "ticker": ticker,
+                        "last_price_date": last_price_dates[ticker],
+                        "liquidation_price": monthly_prices.at[last_price_dates[ticker], ticker],
+                        "starting_weight": previous_weights[ticker],
+                    }
+                )
+            terminal_traded_notional.loc[date] = previous_weights.loc[terminal].abs().sum()
+            terminal_liquidation_count.loc[date] = len(terminal)
         safe_returns = period_returns.where(previous_weights.ne(0), 0.0)
+        safe_returns = safe_returns.fillna(0.0)
         period_gross_return = (previous_weights * safe_returns).sum()
         gross_return.loc[date] = period_gross_return
         drifted_weights = previous_weights * (1 + safe_returns) / (1 + period_gross_return)
+        if missing.any():
+            drifted_weights.loc[terminal] = 0.0
         current_weights = proposed_weights.loc[date] if scheduled[position] else drifted_weights
         formation_traded_notional.loc[date] = current_weights.sub(drifted_weights).abs().sum()
         target_weights.loc[date] = current_weights
         previous_weights = current_weights
 
-    charged_traded_notional = formation_traded_notional.shift(1).fillna(0.0)
+    charged_traded_notional = (
+        formation_traded_notional.shift(1).fillna(0.0) + terminal_traded_notional
+    )
     trading_cost = charged_traded_notional * one_way_bps / 10_000
     short_exposure = held_weights.clip(upper=0).abs().sum(axis=1)
     borrow_cost = short_exposure * annual_short_borrow_bps / 10_000 / 12
@@ -89,6 +121,8 @@ def run_backtest(
             "ranked_securities": signals.notna().sum(axis=1).shift(1).fillna(0).astype(int),
             "long_positions": held_weights.gt(0).sum(axis=1),
             "short_positions": held_weights.lt(0).sum(axis=1),
+            "terminal_liquidations": terminal_liquidation_count,
+            "terminal_liquidation_notional": terminal_traded_notional,
             "traded_notional": charged_traded_notional,
             "trading_cost": trading_cost,
             "borrow_cost": borrow_cost,
@@ -97,4 +131,17 @@ def run_backtest(
     )
     active = held_weights.abs().sum(axis=1).gt(0)
     returns = returns.loc[active]
-    return BacktestResult(returns=returns, target_weights=target_weights, signals=signals)
+    liquidation_columns = [
+        "liquidation_date",
+        "ticker",
+        "last_price_date",
+        "liquidation_price",
+        "starting_weight",
+    ]
+    terminal_liquidations = pd.DataFrame(terminal_events, columns=liquidation_columns)
+    return BacktestResult(
+        returns=returns,
+        target_weights=target_weights,
+        signals=signals,
+        terminal_liquidations=terminal_liquidations,
+    )

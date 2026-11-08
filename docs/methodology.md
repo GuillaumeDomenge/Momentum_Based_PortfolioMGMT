@@ -23,6 +23,8 @@ The target formed at `t` is held from `t` to `t+1`. Code enforces this with a on
 
 Trading cost equals the configured one-way basis-point assumption multiplied by total traded notional. Traded notional compares the new target with prior weights after they drift with security returns. Short borrow cost is applied monthly to short gross exposure.
 
+If a held security reaches the end of its available listing history, the position is forcibly liquidated at its final available adjusted close. The resulting traded notional incurs the normal one-way transaction cost, and the proceeds remain as implicit cash until the next rebalance. Each event is written to `terminal_liquidations.csv`. Missing observations followed by a later valid price are treated as data gaps and still stop the backtest.
+
 ## Data policy
 
 Adjusted prices must be positive and unique by date/security. A held security with a missing return stops the run. Before publishing results, the dataset decision must document:
