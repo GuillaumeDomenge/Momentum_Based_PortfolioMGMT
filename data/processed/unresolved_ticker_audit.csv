@@ -1,0 +1,136 @@
+ticker,resolution_status,cik,name,date_removed,last_attempt_utc,identity_source
+ABS,unidentified_legacy_symbol,,,,2026-11-06T16:03:44.347520+00:00,
+ACKH,unidentified_legacy_symbol,,,,2026-11-06T16:03:45.881085+00:00,
+AFS-A,unidentified_legacy_symbol,,,,2026-11-06T16:03:48.604238+00:00,
+ANDW,unidentified_legacy_symbol,,,,2026-11-06T16:03:56.329951+00:00,
+APCC,unidentified_legacy_symbol,,,,2026-11-06T16:03:59.112082+00:00,
+ASN,identified_no_safe_price_alias,0001156826,Archstone-Smith Trust,2008-01-22*,2026-11-06T16:04:02.952164+00:00,lawcal/sp500-components-history
+ATGE,unidentified_legacy_symbol,,,,2026-11-06T16:04:03.698803+00:00,
+AW,identified_no_safe_price_alias,0000848865,Allied Waste Industries,2009-03-07*,2026-11-06T16:04:07.137321+00:00,lawcal/sp500-components-history
+AWE,unidentified_legacy_symbol,,,,2026-11-06T16:04:07.764493+00:00,
+AZA-A,unidentified_legacy_symbol,,,,2026-11-06T16:04:09.050923+00:00,
+BDK,identified_no_safe_price_alias,0000093556,Black & Decker Corp.,2010-04-03*,2026-11-06T16:04:10.654505+00:00,lawcal/sp500-components-history
+BHMSQ,bankruptcy_or_otc_terminal,,,,2026-11-06T16:04:14.682721+00:00,
+BIG,identified_no_safe_price_alias,0000768835,Big Lots Inc.,2013-02-15,2026-11-06T16:04:57.212891+00:00,lawcal/sp500-components-history
+BLS,unidentified_legacy_symbol,,,,2026-11-06T16:04:59.929478+00:00,
+BMC,identified_no_safe_price_alias,0000835729,BMC Software,2013-09-10,2026-11-06T17:12:38.682917+00:00,lawcal/sp500-components-history
+BMET,identified_no_safe_price_alias,0000351346,"Biomet, Inc.",2008-01-22*,2026-11-06T17:12:39.240571+00:00,lawcal/sp500-components-history
+BNI,identified_no_safe_price_alias,0000934612,Burlington Northern Santa Fe Corp.,2010-01-27*,2026-11-06T17:12:40.475080+00:00,lawcal/sp500-components-history
+BOL,identified_no_safe_price_alias,0000010427,Bausch & Lomb,2008-01-22*,2026-11-06T17:12:41.029052+00:00,lawcal/sp500-components-history
+BSC,identified_no_safe_price_alias,0000777001,Bear Stearns Cos.,2008-08-21*,2026-11-06T17:12:42.570669+00:00,lawcal/sp500-components-history
+CBE,identified_no_safe_price_alias,0001141982,Cooper Industries,2012-12-03,2026-11-06T17:12:45.704096+00:00,lawcal/sp500-components-history
+CBS,identified_no_safe_price_alias,0000813828,CBS Corp.,2019-12-05*,2026-11-06T17:12:46.875609+00:00,lawcal/sp500-components-history
+CBSS,identified_no_safe_price_alias,0000018568,Compass Bancshares,2007-08-30*,2026-11-06T17:12:47.346415+00:00,lawcal/sp500-components-history
+CCE,identified_no_safe_price_alias,0001491675,Coca-Cola Enterprises,2016-05-31,2026-11-06T17:12:47.856999+00:00,lawcal/sp500-components-history
+CCTYQ,bankruptcy_or_otc_terminal,,,,2026-11-06T17:12:48.310801+00:00,
+CEPH,identified_no_safe_price_alias,0000873364,Cephalon Inc,2011-10-14,2026-11-06T17:12:50.627792+00:00,lawcal/sp500-components-history
+CFC,identified_no_safe_price_alias,0000025191,Countrywide Financial Corp.,2008-07-01,2026-11-06T17:12:51.928181+00:00,lawcal/sp500-components-history
+CGP,unidentified_legacy_symbol,,,,2026-11-06T17:12:53.051617+00:00,
+CIT-A,unidentified_legacy_symbol,,,,2026-11-06T17:12:55.718923+00:00,
+CITGQ,bankruptcy_or_otc_terminal,,,,2026-11-06T17:12:56.239006+00:00,
+CMX,identified_no_safe_price_alias,0001000736,Caremark Rx,2007-05-15*,2026-11-06T17:12:57.319174+00:00,lawcal/sp500-components-history
+CNG,unidentified_legacy_symbol,,,,2026-11-06T17:12:57.797397+00:00,
+COC-B,unidentified_legacy_symbol,,,,2026-11-06T17:12:58.234836+00:00,
+CPNLQ,bankruptcy_or_otc_terminal,,,,2026-11-06T17:13:01.029387+00:00,
+CPQ,bankruptcy_or_otc_terminal,,,,2026-11-06T17:13:01.520579+00:00,
+DALRQ,bankruptcy_or_otc_terminal,,,,2026-11-06T18:18:29.065358+00:00,
+DCNAQ,bankruptcy_or_otc_terminal,,,,2026-11-06T18:18:30.257048+00:00,
+DJ,identified_no_safe_price_alias,0000029924,Dow Jones & Co.,2007-12-13,2026-11-06T18:18:35.208551+00:00,lawcal/sp500-components-history
+DPHIQ,bankruptcy_or_otc_terminal,,,,2026-11-06T18:18:38.012690+00:00,
+EKDKQ,bankruptcy_or_otc_terminal,,,,2026-11-06T18:18:42.041739+00:00,
+ENDP,identified_no_safe_price_alias,0001100962,Endo International,2017-03-02,2026-11-06T18:18:42.653596+00:00,lawcal/sp500-components-history
+ENRNQ,bankruptcy_or_otc_terminal,,,,2026-11-06T18:18:43.228447+00:00,
+EOP,unidentified_legacy_symbol,,,,2026-11-06T18:18:43.753469+00:00,
+ESV,identified_no_safe_price_alias,0000314808,Ensco plc,2016-03-30,2026-11-06T18:18:45.994337+00:00,lawcal/sp500-components-history
+FBF,unidentified_legacy_symbol,,,,2026-11-06T18:18:47.974910+00:00,
+FJ,unidentified_legacy_symbol,,,,2026-11-06T18:18:52.226735+00:00,
+FLTWQ,bankruptcy_or_otc_terminal,,,,2026-11-06T18:18:55.271498+00:00,
+FRC,identified_no_safe_price_alias,0001132979,First Republic Bank,2023-05-04,2026-11-06T18:18:56.437641+00:00,lawcal/sp500-components-history
+FSH,unidentified_legacy_symbol,,,,2026-11-06T18:18:57.748137+00:00,
+GAPTQ,bankruptcy_or_otc_terminal,,,,2026-11-06T18:19:00.743847+00:00,
+GDW,unidentified_legacy_symbol,,,,2026-11-06T18:19:02.143673+00:00,
+GLK,unidentified_legacy_symbol,,,,2026-11-06T19:24:23.685888+00:00,
+GPS,identified_no_safe_price_alias,0000039911,Gap,2022-02-03,2026-11-06T19:24:24.895837+00:00,lawcal/sp500-components-history
+GPU,unidentified_legacy_symbol,,,,2026-11-06T19:24:25.479262+00:00,
+GTW,unidentified_legacy_symbol,,,,2026-11-06T19:24:26.887748+00:00,
+GX,unidentified_legacy_symbol,,,,2026-11-06T19:24:27.452342+00:00,
+HET,identified_no_safe_price_alias,0000858339,Harrah's Entertainment,2008-08-23*,2026-11-06T19:24:31.996215+00:00,lawcal/sp500-components-history
+HM,unidentified_legacy_symbol,,,,2026-11-06T19:24:33.281509+00:00,
+IAC,unidentified_legacy_symbol,,,,2026-11-06T19:24:39.506233+00:00,
+IGT,identified_no_safe_price_alias,0000353944,International Game Technology,2014-06-20,2026-11-06T19:24:40.044034+00:00,lawcal/sp500-components-history
+IMNX,unidentified_legacy_symbol,,,,2026-11-06T19:24:41.159027+00:00,
+INCLF,unidentified_legacy_symbol,,,,2026-11-06T19:24:41.698807+00:00,
+JCP,identified_no_safe_price_alias,0001166126,Penney (J.C.),2013-12-02,2026-11-06T19:24:43.273787+00:00,lawcal/sp500-components-history
+JHF,unidentified_legacy_symbol,,,,2026-11-06T19:24:44.656120+00:00,
+JOS,unidentified_legacy_symbol,,,,2026-11-06T19:24:47.388855+00:00,
+JP,unidentified_legacy_symbol,,,,2026-11-06T19:24:48.749140+00:00,
+KM,unidentified_legacy_symbol,,,,2026-11-06T19:24:51.920840+00:00,
+KRB,unidentified_legacy_symbol,,,,2026-11-06T19:24:54.150755+00:00,
+KRI,unidentified_legacy_symbol,,,,2026-11-06T19:24:55.354803+00:00,
+KSE,identified_no_safe_price_alias,0001062379,Keyspan Energy,2007-08-24,2026-11-06T19:24:55.883976+00:00,lawcal/sp500-components-history
+LDG,unidentified_legacy_symbol,,,,2026-11-06T20:30:25.793990+00:00,
+LEHMQ,bankruptcy_or_otc_terminal,,,,2026-11-06T20:30:27.245955+00:00,
+MAY,unidentified_legacy_symbol,,,,2026-11-06T20:30:32.893921+00:00,
+MDP,identified_no_safe_price_alias,0000065011,Meredith Corp.,2011-01-03,2026-11-06T20:30:33.466899+00:00,lawcal/sp500-components-history
+MEE,identified_no_safe_price_alias,0000037748,Massey Energy Company,2011-06-01,2026-11-06T20:30:35.467496+00:00,lawcal/sp500-components-history
+MEL,identified_no_safe_price_alias,0000064782,Mellon Bank Corp.,2008-01-22*,2026-11-06T20:30:36.036857+00:00,lawcal/sp500-components-history
+MERQ,bankruptcy_or_otc_terminal,,,,2026-11-06T20:30:37.143259+00:00,
+MKG,unidentified_legacy_symbol,,,,2026-11-06T20:30:40.451592+00:00,
+MNK,identified_no_safe_price_alias,0001567892,Mallinckrodt Plc,2017-07-26,2026-11-06T20:30:41.589871+00:00,lawcal/sp500-components-history
+MOLX,identified_no_safe_price_alias,0000067472,Molex Inc.,2013-12-10,2026-11-06T20:30:42.220548+00:00,lawcal/sp500-components-history
+MTLQQ,bankruptcy_or_otc_terminal,,,,2026-11-06T20:30:44.290062+00:00,
+MYG,unidentified_legacy_symbol,,,,2026-11-06T20:30:47.393629+00:00,
+MZIAQ,bankruptcy_or_otc_terminal,,,,2026-11-06T20:30:48.919703+00:00,
+NCC,identified_no_safe_price_alias,0000069970,National City Corp.,2009-03-07*,2026-11-06T20:30:51.170926+00:00,lawcal/sp500-components-history
+NCE,unidentified_legacy_symbol,,,,2026-11-06T20:30:51.750970+00:00,
+NFB,unidentified_legacy_symbol,,,,2026-11-06T20:30:52.912859+00:00,
+NGH,unidentified_legacy_symbol,,,,2026-11-06T20:30:53.417135+00:00,
+NMK,unidentified_legacy_symbol,,,,2026-11-06T20:30:55.684944+00:00,
+NOVL,identified_no_safe_price_alias,0000758004,Novell Inc.,2011-04-27,2026-11-06T20:30:56.324564+00:00,lawcal/sp500-components-history
+NXTL,unidentified_legacy_symbol,,,,2026-11-08T11:39:18.774026+00:00,
+NYX,identified_no_safe_price_alias,0001368007,NYSE Euronext,2013-11-13,2026-11-08T11:39:19.242725+00:00,lawcal/sp500-components-history
+OAT,unidentified_legacy_symbol,,,,2026-11-08T11:39:19.758297+00:00,
+OK,unidentified_legacy_symbol,,,,2026-11-08T11:39:22.332505+00:00,
+OWENQ,bankruptcy_or_otc_terminal,,,,2026-11-08T11:39:23.877898+00:00,
+PDG,unidentified_legacy_symbol,,,,2026-11-08T11:39:28.389422+00:00,
+PGL,unidentified_legacy_symbol,,,,2026-11-08T11:39:30.075882+00:00,
+PHA,unidentified_legacy_symbol,,,,2026-11-08T11:39:31.039197+00:00,
+PNU,unidentified_legacy_symbol,,,,2026-11-08T11:39:33.155684+00:00,
+PRD,unidentified_legacy_symbol,,,,2026-11-08T11:39:33.619502+00:00,
+PTV,identified_no_safe_price_alias,0001089976,Pactiv Corp.,2010-11-17,2026-11-08T11:39:34.635256+00:00,lawcal/sp500-components-history
+PVN,unidentified_legacy_symbol,,,,2026-11-08T11:39:35.158984+00:00,
+PWJ,unidentified_legacy_symbol,,,,2026-11-08T11:39:35.619479+00:00,
+QTRN,unidentified_legacy_symbol,,,,2026-11-08T11:39:39.373294+00:00,
+RAD,unidentified_legacy_symbol,,,,2026-11-08T11:39:39.897650+00:00,
+RATL,unidentified_legacy_symbol,,,,2026-11-08T11:39:41.012253+00:00,
+RBK,unidentified_legacy_symbol,,,,2026-11-08T11:39:41.515801+00:00,
+RNB,unidentified_legacy_symbol,,,,2026-11-08T11:39:45.422374+00:00,
+RX,identified_no_safe_price_alias,0001058083,IMS Health Inc.,2010-02-26,2026-11-08T12:45:11.921757+00:00,lawcal/sp500-components-history
+SBL,unidentified_legacy_symbol,,,,2026-11-08T12:45:14.269621+00:00,
+SEBL,unidentified_legacy_symbol,,,,2026-11-08T12:45:15.758715+00:00,
+SFA,unidentified_legacy_symbol,,,,2026-11-08T12:45:17.043269+00:00,
+SGID,unidentified_legacy_symbol,,,,2026-11-08T12:45:17.535104+00:00,
+SLR,identified_no_safe_price_alias,0000835541,Solectron,2007-10-02,2026-11-08T12:45:19.894435+00:00,lawcal/sp500-components-history
+SMS,unidentified_legacy_symbol,,,,2026-11-08T12:45:21.105433+00:00,
+SOTR,unidentified_legacy_symbol,,,,2026-11-08T12:45:23.171675+00:00,
+TLAB,identified_no_safe_price_alias,0000317771,Tellabs Inc.,2011-12-20,2026-11-08T12:45:34.552635+00:00,lawcal/sp500-components-history
+TMC-A,unidentified_legacy_symbol,,,,2026-11-08T12:45:35.012556+00:00,
+TNB,unidentified_legacy_symbol,,,,2026-11-08T12:45:35.928459+00:00,
+TOY,unidentified_legacy_symbol,,,,2026-11-08T12:45:36.454306+00:00,
+TRB,identified_no_safe_price_alias,0000726513,Tribune Co.,2007-12-20,2026-11-08T12:45:36.905079+00:00,lawcal/sp500-components-history
+TUP,unidentified_legacy_symbol,,,,2026-11-08T12:45:39.860516+00:00,
+TXU,identified_no_safe_price_alias,0001023291,TXU Corp.,2008-01-22*,2026-11-08T12:45:42.560729+00:00,lawcal/sp500-components-history
+UAWGQ,bankruptcy_or_otc_terminal,,,,2026-11-08T12:45:43.014700+00:00,
+UCM,unidentified_legacy_symbol,,,,2026-11-08T12:45:43.592292+00:00,
+UMG,unidentified_legacy_symbol,,,,2026-11-08T12:45:44.038807+00:00,
+UPR,unidentified_legacy_symbol,,,,2026-11-08T12:45:44.551158+00:00,
+USW,unidentified_legacy_symbol,,,,2026-11-08T12:45:45.070891+00:00,
+UVN,identified_no_safe_price_alias,0001017008,Univision Communications,2008-01-22*,2026-11-08T13:51:15.517418+00:00,lawcal/sp500-components-history
+VSTNQ,bankruptcy_or_otc_terminal,,,,2026-11-08T13:51:18.679866+00:00,
+WAMUQ,bankruptcy_or_otc_terminal,,,,2026-11-08T13:51:20.020266+00:00,
+WCOEQ,bankruptcy_or_otc_terminal,,,,2026-11-08T13:51:23.329316+00:00,
+WFT,identified_no_safe_price_alias,0001453090,Weatherford International Ltd.,2009-03-07*,2026-11-08T13:51:25.013757+00:00,lawcal/sp500-components-history
+WLA,unidentified_legacy_symbol,,,,2026-11-08T13:51:26.284892+00:00,
+WNDXQ,bankruptcy_or_otc_terminal,,,,2026-11-08T13:51:28.696290+00:00,
+WWY,identified_no_safe_price_alias,0000108601,Wrigley (Wm) Jr.,2008-11-03*,2026-11-08T13:51:30.673064+00:00,lawcal/sp500-components-history
+WYE,identified_no_safe_price_alias,0000005187,Wyeth,2009-10-18*,2026-11-08T13:51:31.292512+00:00,lawcal/sp500-components-history

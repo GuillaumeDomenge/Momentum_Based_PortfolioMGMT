@@ -1,0 +1,18 @@
+historical_ticker,canonical_ticker,cik,change_type,evidence
+ABC,COR,0001140859,ticker_change,lawcal/sp500-components-history same CIK
+ADS,BFH,0001101215,name_and_ticker_change,SEC filing confirms ADS to BFH
+ANTM,ELV,0001156039,ticker_change,lawcal/sp500-components-history same CIK
+BGEN,BIIB,0000875045,ticker_change,historical company ticker continuity
+BLL,BALL,0000009389,ticker_change,lawcal/sp500-components-history same CIK
+CIN,CINF,0000020286,ticker_change,historical company ticker continuity
+COG,CTRA,0000858470,name_and_ticker_change,lawcal/sp500-components-history same CIK
+CTL,LUMN,0000018926,ticker_change,lawcal/sp500-components-history same CIK
+EQR,VMRK,0000906107,ticker_change,lawcal/sp500-components-history same CIK
+FBHS,FBIN,0001519751,name_and_ticker_change,SEC filing confirms FBHS to FBIN
+HFC,DINO,0000048039,parent_reorganization,company release confirms HFC replaced by DINO
+NCR,VYX,0000070866,name_and_ticker_change,company release confirms NCR to VYX
+MMC,MRSH,0000062709,ticker_change,lawcal/sp500-components-history same CIK
+PKI,RVTY,0000031791,name_and_ticker_change,lawcal/sp500-components-history same CIK
+RE,EG,0001095073,ticker_change,lawcal/sp500-components-history same CIK
+TMK,GL,0000320335,name_and_ticker_change,lawcal/sp500-components-history same CIK
+WLTW,WTW,0001140536,ticker_change,lawcal/sp500-components-history same CIK

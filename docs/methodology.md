@@ -34,6 +34,8 @@ Adjusted prices must be positive and unique by date/security. A held security wi
 
 Yahoo is the primary prototype price source. Tiingo is used only for historical members with no Yahoo observations. A security uses one vendor for its complete history; prices are never spliced between vendors. Vendor-specific raw files remain local, while ticker-level provenance and aggregate coverage are recorded separately.
 
+Historical ticker aliases are applied only when the replacement represents a documented continuation and its adjusted history covers the former symbol's membership period. Acquirers are not substituted for acquired securities. Bankruptcy and OTC-terminal symbols remain unresolved unless an appropriate terminal return is sourced.
+
 ## Evaluation protocol
 
 Choose the final holdout period before robustness testing. Report gross and net results, turnover, CAGR, annualized volatility, Sharpe ratio, and maximum drawdown. Add benchmark/factor regressions only after the return pipeline is independently reconciled.

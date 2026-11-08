@@ -10,6 +10,7 @@ import pandas as pd
 import requests
 from dotenv import load_dotenv
 
+from quant_momentum.aliases import alias_source_rows, apply_aliases, load_aliases
 from quant_momentum.config import load_config
 
 
@@ -130,6 +131,7 @@ def main() -> None:
         help="Maximum API requests this run; defaults to the configured safe hourly amount.",
     )
     parser.add_argument("--dry-run", action="store_true", help="Report work without API calls.")
+    parser.add_argument("--merge-only", action="store_true", help="Merge caches and aliases without API calls.")
     parser.add_argument("--retry-failed", action="store_true", help="Retry prior failed symbols.")
     args = parser.parse_args()
 
@@ -138,7 +140,20 @@ def main() -> None:
     tiingo_config = data_config["tiingo"]
     membership = pd.read_csv(data_config["membership_file"])
     yahoo_prices = pd.read_csv(data_config["yahoo_price_file"], parse_dates=["date"])
-    candidates = missing_tickers(membership, yahoo_prices)
+    alias_price_path = Path(data_config["alias_canonical_price_file"])
+    if alias_price_path.exists():
+        alias_prices = pd.read_csv(alias_price_path, parse_dates=["date"])
+        yahoo_prices = (
+            pd.concat([yahoo_prices, alias_prices], ignore_index=True)
+            .drop_duplicates(["date", "ticker"], keep="last")
+        )
+    aliases = load_aliases(data_config["ticker_alias_file"])
+    mapped_tickers = set(aliases["historical_ticker"])
+    candidates = [
+        ticker
+        for ticker in missing_tickers(membership, yahoo_prices)
+        if ticker not in mapped_tickers
+    ]
 
     cache_directory = Path(data_config["tiingo_cache_dir"])
     cache_directory.mkdir(parents=True, exist_ok=True)
@@ -159,7 +174,7 @@ def main() -> None:
     limit = args.max_symbols or int(tiingo_config.get("max_symbols_per_run", 45))
     if limit < 1 or limit > 50:
         raise ValueError("max-symbols must be between 1 and 50.")
-    selected = pending[:limit]
+    selected = [] if args.merge_only else pending[:limit]
     print(
         f"Tiingo fallback: {len(candidates)} Yahoo-missing tickers; "
         f"{len(cached_tickers)} cached; {len(pending)} pending; {len(selected)} selected."
@@ -169,7 +184,7 @@ def main() -> None:
 
     token_variable = tiingo_config["token_environment_variable"]
     token = os.getenv(token_variable)
-    if not token:
+    if selected and not token:
         raise ValueError(f"Set the {token_variable} environment variable before fetching Tiingo data.")
 
     for ticker in selected:
@@ -202,6 +217,14 @@ def main() -> None:
         data_config["tiingo_remaining_file"],
     )
     combined, sources = merge_price_sources(yahoo_prices, cached_prices)
+    combined = apply_aliases(combined, aliases)
+    sources = pd.concat(
+        [
+            sources.loc[~sources["ticker"].isin(mapped_tickers)],
+            alias_source_rows(combined, aliases),
+        ],
+        ignore_index=True,
+    ).sort_values("ticker").reset_index(drop=True)
     output = Path(data_config["price_file"])
     output.parent.mkdir(parents=True, exist_ok=True)
     combined.to_csv(output, index=False)
@@ -232,6 +255,7 @@ def main() -> None:
         "requested_end_exclusive": data_config["end"],
         "yahoo_tickers": int((sources["source"] == "yfinance").sum()),
         "tiingo_tickers": int((sources["source"] == "tiingo").sum()),
+        "alias_tickers": len(aliases),
         "unresolved_tickers": unresolved,
         "annual_membership_coverage": coverage.to_dict(orient="records"),
         "rows": len(combined),

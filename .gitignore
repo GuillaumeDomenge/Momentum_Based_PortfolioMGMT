@@ -12,6 +12,8 @@ data/processed/*
 !data/processed/membership_coverage.csv
 !data/processed/price_sources.csv
 !data/processed/tiingo_remaining.csv
+!data/processed/ticker_aliases.csv
+!data/processed/unresolved_ticker_audit.csv
 reports/*.html
 reports/*.png
 reports/*.pdf

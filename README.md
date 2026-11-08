@@ -62,6 +62,8 @@ The guarded batch script refreshes `data/processed/tiingo_remaining.csv`, checks
 
 Repeat it after the provider's hourly quota resets. Each Tiingo history replaces that ticker's Yahoo history completely, avoiding mixed adjustment conventions within a security. Raw vendor data and tokens are never committed.
 
+Verified same-company ticker changes are maintained in `data/processed/ticker_aliases.csv`. Aliases require stable company-identity evidence and a canonical adjusted-price history covering the old membership period. Acquisitions and bankruptcies are not mapped to successor companies. `data/processed/unresolved_ticker_audit.csv` records the identity and resolution status of every remaining failure.
+
 The optimizer evaluates a declared parameter grid over the same February 2015–December 2022 training window, selects by net Sharpe, and then reports the untouched later holdout period separately. Earlier prices initialize longer signals but do not enter candidate scores. The test runs from January 2023 onward. Transaction-cost assumptions are fixed rather than optimized.
 
 The fetcher uses `yfinance` with explicitly auto-adjusted prices and writes a provenance manifest beside the ignored raw CSV. Historical membership is reconstructed from the community-maintained `fja05680/sp500` dataset. Yahoo lacks many former and delisted symbols, so `data/processed/membership_coverage.csv` must accompany every prototype result; this is not yet an institutional-quality point-in-time backtest. The backtest writes monthly gross/net returns, the actual number of ranked securities and positions, cost reconciliation, target weights, and a performance summary. It stops if a held security has no return rather than silently treating it as zero.
