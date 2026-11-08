@@ -68,6 +68,14 @@ The optimizer evaluates a declared parameter grid over the same February 2015–
 
 The fetcher uses `yfinance` with explicitly auto-adjusted prices and writes a provenance manifest beside the ignored raw CSV. Historical membership is reconstructed from the community-maintained `fja05680/sp500` dataset. Yahoo lacks many former and delisted symbols, so `data/processed/membership_coverage.csv` must accompany every prototype result; this is not yet an institutional-quality point-in-time backtest. The backtest writes monthly gross/net returns, the actual number of ranked securities and positions, cost reconciliation, target weights, terminal-liquidation events, and a performance summary. A held security with no later observation is liquidated at its final available adjusted close, with trading costs charged and proceeds retained as cash. A temporary price gap still stops the run rather than being silently treated as a zero return.
 
+Unidentified historical symbols can be sent to OpenFIGI's free delisted-equity mapping endpoint:
+
+```powershell
+momentum-resolve-legacy --config config.yaml
+```
+
+The command writes `data/processed/legacy_ticker_candidates.csv`. It combines OpenFIGI's delisted-equity search with the public CRSP-derived S&P membership tables published by WRDS, using membership-date overlap to reject recycled tickers. Evidence-backed exceptions live in `data/processed/legacy_identity_overrides.csv`. Verified identities are promoted in the unresolved audit, but they are not automatic price aliases and do not change the investable universe.
+
 ## Layout
 
 - `src/quant_momentum/`: reusable research code

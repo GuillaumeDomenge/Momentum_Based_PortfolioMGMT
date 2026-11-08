@@ -25,6 +25,8 @@ data:
   yahoo_price_file: "data/raw/prices_yahoo.csv"
   tiingo_cache_dir: "data/raw/tiingo"
   tiingo_remaining_file: "data/processed/tiingo_remaining.csv"
+  unresolved_ticker_audit_file: "data/processed/unresolved_ticker_audit.csv"
+  legacy_identity_override_file: "data/processed/legacy_identity_overrides.csv"
   ticker_alias_file: "data/processed/ticker_aliases.csv"
   alias_canonical_price_file: "data/raw/alias_canonical_yahoo.csv"
   price_source_file: "data/processed/price_sources.csv"

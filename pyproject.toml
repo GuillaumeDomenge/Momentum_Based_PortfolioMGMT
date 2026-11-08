@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "Transaction-cost-aware cross-sectional equity momentum research"
 requires-python = ">=3.11"
 dependencies = [
+  "beautifulsoup4>=4.12",
   "numpy>=1.26",
   "pandas>=2.1",
   "python-dotenv>=1.0",
@@ -25,6 +26,7 @@ momentum-backtest = "quant_momentum.cli:main"
 momentum-fetch = "quant_momentum.fetch:main"
 momentum-fill-tiingo = "quant_momentum.tiingo:main"
 momentum-optimize = "quant_momentum.optimize:main"
+momentum-resolve-legacy = "quant_momentum.legacy:main"
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]

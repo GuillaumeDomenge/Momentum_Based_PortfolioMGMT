@@ -25,6 +25,8 @@ Trading cost equals the configured one-way basis-point assumption multiplied by 
 
 If a held security reaches the end of its available listing history, the position is forcibly liquidated at its final available adjusted close. The resulting traded notional incurs the normal one-way transaction cost, and the proceeds remain as implicit cash until the next rebalance. Each event is written to `terminal_liquidations.csv`. Missing observations followed by a later valid price are treated as data gaps and still stop the backtest.
 
+Legacy ticker identity is resolved separately from price substitution. The resolver combines OpenFIGI delisted-equity candidates with the public CRSP-derived S&P membership tables published by WRDS, requiring the ticker's security-membership dates to overlap the project's research window. Historical share-class notation is matched to the issuer's base ticker only for identity purposes. Direct SEC or OpenFIGI evidence is stored for exceptions. An identified company is not made investable until a continuous price series for the same security has been independently verified.
+
 ## Data policy
 
 Adjusted prices must be positive and unique by date/security. A held security with a missing return stops the run. Before publishing results, the dataset decision must document:

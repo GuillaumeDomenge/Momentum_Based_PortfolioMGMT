@@ -1,18 +1,18 @@
 ticker,resolution_status,cik,name,date_removed,last_attempt_utc,identity_source
-ABS,unidentified_legacy_symbol,,,,2026-11-06T16:03:44.347520+00:00,
-ACKH,unidentified_legacy_symbol,,,,2026-11-06T16:03:45.881085+00:00,
-AFS-A,unidentified_legacy_symbol,,,,2026-11-06T16:03:48.604238+00:00,
-ANDW,unidentified_legacy_symbol,,,,2026-11-06T16:03:56.329951+00:00,
-APCC,unidentified_legacy_symbol,,,,2026-11-06T16:03:59.112082+00:00,
+ABS,identified_no_safe_price_alias,,ALBERTSONS INC,,2026-11-06T16:03:44.347520+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+ACKH,identified_no_safe_price_alias,0001109304,Armstrong Holdings Inc.,,2026-11-06T16:03:45.881085+00:00,SEC filing https://www.sec.gov/Archives/edgar/data/1109304/000119312507081798/d10ka.htm
+AFS-A,identified_no_safe_price_alias,,ASSOCIATES FIRST CAPITAL CORP,,2026-11-06T16:03:48.604238+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+ANDW,identified_no_safe_price_alias,,ANDREW CORP,,2026-11-06T16:03:56.329951+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+APCC,identified_no_safe_price_alias,,AMERICAN POWER CONVERSION CORP,,2026-11-06T16:03:59.112082+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 ASN,identified_no_safe_price_alias,0001156826,Archstone-Smith Trust,2008-01-22*,2026-11-06T16:04:02.952164+00:00,lawcal/sp500-components-history
-ATGE,unidentified_legacy_symbol,,,,2026-11-06T16:04:03.698803+00:00,
+ATGE,identified_no_safe_price_alias,,DEVRY EDUCATION GROUP INC; ADTALEM GLOBAL EDUCATION INC; DEVRY INC DEL,,2026-11-06T16:04:03.698803+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 AW,identified_no_safe_price_alias,0000848865,Allied Waste Industries,2009-03-07*,2026-11-06T16:04:07.137321+00:00,lawcal/sp500-components-history
-AWE,unidentified_legacy_symbol,,,,2026-11-06T16:04:07.764493+00:00,
-AZA-A,unidentified_legacy_symbol,,,,2026-11-06T16:04:09.050923+00:00,
+AWE,identified_no_safe_price_alias,,A T & T WIRELESS SVCS INC,,2026-11-06T16:04:07.764493+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+AZA-A,identified_no_safe_price_alias,,ALZA CORP,,2026-11-06T16:04:09.050923+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 BDK,identified_no_safe_price_alias,0000093556,Black & Decker Corp.,2010-04-03*,2026-11-06T16:04:10.654505+00:00,lawcal/sp500-components-history
 BHMSQ,bankruptcy_or_otc_terminal,,,,2026-11-06T16:04:14.682721+00:00,
 BIG,identified_no_safe_price_alias,0000768835,Big Lots Inc.,2013-02-15,2026-11-06T16:04:57.212891+00:00,lawcal/sp500-components-history
-BLS,unidentified_legacy_symbol,,,,2026-11-06T16:04:59.929478+00:00,
+BLS,identified_no_safe_price_alias,,BELLSOUTH CORP,,2026-11-06T16:04:59.929478+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 BMC,identified_no_safe_price_alias,0000835729,BMC Software,2013-09-10,2026-11-06T17:12:38.682917+00:00,lawcal/sp500-components-history
 BMET,identified_no_safe_price_alias,0000351346,"Biomet, Inc.",2008-01-22*,2026-11-06T17:12:39.240571+00:00,lawcal/sp500-components-history
 BNI,identified_no_safe_price_alias,0000934612,Burlington Northern Santa Fe Corp.,2010-01-27*,2026-11-06T17:12:40.475080+00:00,lawcal/sp500-components-history
@@ -25,12 +25,12 @@ CCE,identified_no_safe_price_alias,0001491675,Coca-Cola Enterprises,2016-05-31,2
 CCTYQ,bankruptcy_or_otc_terminal,,,,2026-11-06T17:12:48.310801+00:00,
 CEPH,identified_no_safe_price_alias,0000873364,Cephalon Inc,2011-10-14,2026-11-06T17:12:50.627792+00:00,lawcal/sp500-components-history
 CFC,identified_no_safe_price_alias,0000025191,Countrywide Financial Corp.,2008-07-01,2026-11-06T17:12:51.928181+00:00,lawcal/sp500-components-history
-CGP,unidentified_legacy_symbol,,,,2026-11-06T17:12:53.051617+00:00,
-CIT-A,unidentified_legacy_symbol,,,,2026-11-06T17:12:55.718923+00:00,
+CGP,identified_no_safe_price_alias,,COASTAL STS GAS CORP; COASTAL CORP; COASTAL STS GAS PRODUCING CO,,2026-11-06T17:12:53.051617+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+CIT-A,identified_no_safe_price_alias,,C I T GROUP INC,,2026-11-06T17:12:55.718923+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 CITGQ,bankruptcy_or_otc_terminal,,,,2026-11-06T17:12:56.239006+00:00,
 CMX,identified_no_safe_price_alias,0001000736,Caremark Rx,2007-05-15*,2026-11-06T17:12:57.319174+00:00,lawcal/sp500-components-history
-CNG,unidentified_legacy_symbol,,,,2026-11-06T17:12:57.797397+00:00,
-COC-B,unidentified_legacy_symbol,,,,2026-11-06T17:12:58.234836+00:00,
+CNG,identified_no_safe_price_alias,,CONSOLIDATED NATURAL GAS CO,,2026-11-06T17:12:57.797397+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+COC-B,identified_no_safe_price_alias,,CONOCO INC,,2026-11-06T17:12:58.234836+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 CPNLQ,bankruptcy_or_otc_terminal,,,,2026-11-06T17:13:01.029387+00:00,
 CPQ,bankruptcy_or_otc_terminal,,,,2026-11-06T17:13:01.520579+00:00,
 DALRQ,bankruptcy_or_otc_terminal,,,,2026-11-06T18:18:29.065358+00:00,
@@ -40,97 +40,97 @@ DPHIQ,bankruptcy_or_otc_terminal,,,,2026-11-06T18:18:38.012690+00:00,
 EKDKQ,bankruptcy_or_otc_terminal,,,,2026-11-06T18:18:42.041739+00:00,
 ENDP,identified_no_safe_price_alias,0001100962,Endo International,2017-03-02,2026-11-06T18:18:42.653596+00:00,lawcal/sp500-components-history
 ENRNQ,bankruptcy_or_otc_terminal,,,,2026-11-06T18:18:43.228447+00:00,
-EOP,unidentified_legacy_symbol,,,,2026-11-06T18:18:43.753469+00:00,
+EOP,identified_no_safe_price_alias,,EQUITY OFFICE PROPERTIES TRUST,,2026-11-06T18:18:43.753469+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 ESV,identified_no_safe_price_alias,0000314808,Ensco plc,2016-03-30,2026-11-06T18:18:45.994337+00:00,lawcal/sp500-components-history
-FBF,unidentified_legacy_symbol,,,,2026-11-06T18:18:47.974910+00:00,
-FJ,unidentified_legacy_symbol,,,,2026-11-06T18:18:52.226735+00:00,
+FBF,identified_no_safe_price_alias,,FLEETBOSTON FINANCIAL CORP; INDUSTRIAL NATIONAL CORP; FLEET FINANCIAL GROUP INC NEW; INDUSTRIAL BANCORP; FLEET FINANCIAL GROUP INC; FLEET BOSTON CORP; FLEET NORSTAR FINANCIAL GRP INC,,2026-11-06T18:18:47.974910+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+FJ,identified_no_safe_price_alias,,JAMES RIVER CORP VA; FORT JAMES CORP,,2026-11-06T18:18:52.226735+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 FLTWQ,bankruptcy_or_otc_terminal,,,,2026-11-06T18:18:55.271498+00:00,
 FRC,identified_no_safe_price_alias,0001132979,First Republic Bank,2023-05-04,2026-11-06T18:18:56.437641+00:00,lawcal/sp500-components-history
-FSH,unidentified_legacy_symbol,,,,2026-11-06T18:18:57.748137+00:00,
+FSH,identified_no_safe_price_alias,,FISHER SCIENTIFIC INTL INC,,2026-11-06T18:18:57.748137+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 GAPTQ,bankruptcy_or_otc_terminal,,,,2026-11-06T18:19:00.743847+00:00,
-GDW,unidentified_legacy_symbol,,,,2026-11-06T18:19:02.143673+00:00,
-GLK,unidentified_legacy_symbol,,,,2026-11-06T19:24:23.685888+00:00,
+GDW,identified_no_safe_price_alias,,GOLDEN WEST FINANCIAL CORP,,2026-11-06T18:19:02.143673+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+GLK,identified_no_safe_price_alias,,GREAT LAKES CHEM CORP,,2026-11-06T19:24:23.685888+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 GPS,identified_no_safe_price_alias,0000039911,Gap,2022-02-03,2026-11-06T19:24:24.895837+00:00,lawcal/sp500-components-history
-GPU,unidentified_legacy_symbol,,,,2026-11-06T19:24:25.479262+00:00,
-GTW,unidentified_legacy_symbol,,,,2026-11-06T19:24:26.887748+00:00,
-GX,unidentified_legacy_symbol,,,,2026-11-06T19:24:27.452342+00:00,
+GPU,identified_no_safe_price_alias,,GENERAL PUBLIC UTILS CORP; G P U INC,,2026-11-06T19:24:25.479262+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+GTW,identified_no_safe_price_alias,,GATEWAY 2000 INC; GATEWAY INC,,2026-11-06T19:24:26.887748+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+GX,identified_no_safe_price_alias,,GLOBAL CROSSING LTD,,2026-11-06T19:24:27.452342+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 HET,identified_no_safe_price_alias,0000858339,Harrah's Entertainment,2008-08-23*,2026-11-06T19:24:31.996215+00:00,lawcal/sp500-components-history
-HM,unidentified_legacy_symbol,,,,2026-11-06T19:24:33.281509+00:00,
-IAC,unidentified_legacy_symbol,,,,2026-11-06T19:24:39.506233+00:00,
+HM,identified_no_safe_price_alias,,HOMESTAKE MINING CO,,2026-11-06T19:24:33.281509+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+IAC,identified_no_safe_price_alias,,IAC INC; INTERACTIVECORP; IAC INTERACTIVECORP; U S A INTERACTIVE; H S N INC; U S A NETWORKS INC; SILVER KING COMMUNICATIONS INC; IAC INTERACTIVECORP NEW,,2026-11-06T19:24:39.506233+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 IGT,identified_no_safe_price_alias,0000353944,International Game Technology,2014-06-20,2026-11-06T19:24:40.044034+00:00,lawcal/sp500-components-history
-IMNX,unidentified_legacy_symbol,,,,2026-11-06T19:24:41.159027+00:00,
-INCLF,unidentified_legacy_symbol,,,,2026-11-06T19:24:41.698807+00:00,
+IMNX,identified_no_safe_price_alias,,IMMUNEX CORP; IMMUNEX CORP NEW,,2026-11-06T19:24:41.159027+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+INCLF,identified_no_safe_price_alias,,Inco Ltd.,,2026-11-06T19:24:41.698807+00:00,OpenFIGI BBG000C4WXH1 https://www.openfigi.com/id/BBG002GLY0L0
 JCP,identified_no_safe_price_alias,0001166126,Penney (J.C.),2013-12-02,2026-11-06T19:24:43.273787+00:00,lawcal/sp500-components-history
-JHF,unidentified_legacy_symbol,,,,2026-11-06T19:24:44.656120+00:00,
-JOS,unidentified_legacy_symbol,,,,2026-11-06T19:24:47.388855+00:00,
-JP,unidentified_legacy_symbol,,,,2026-11-06T19:24:48.749140+00:00,
-KM,unidentified_legacy_symbol,,,,2026-11-06T19:24:51.920840+00:00,
-KRB,unidentified_legacy_symbol,,,,2026-11-06T19:24:54.150755+00:00,
-KRI,unidentified_legacy_symbol,,,,2026-11-06T19:24:55.354803+00:00,
+JHF,identified_no_safe_price_alias,,HANCOCK JOHN FINANCIAL SVCS INC,,2026-11-06T19:24:44.656120+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+JOS,identified_no_safe_price_alias,,JOSTENS INC,,2026-11-06T19:24:47.388855+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+JP,identified_no_safe_price_alias,,JEFFERSON PILOT CORP,,2026-11-06T19:24:48.749140+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+KM,identified_no_safe_price_alias,,K MART CORP; KRESGE S S CO,,2026-11-06T19:24:51.920840+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+KRB,identified_no_safe_price_alias,,M B N A CORP,,2026-11-06T19:24:54.150755+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+KRI,identified_no_safe_price_alias,,KNIGHT RIDDER NEWSPAPERS INC; KNIGHT NEWSPAPERS INC; KNIGHT RIDDER INC,,2026-11-06T19:24:55.354803+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 KSE,identified_no_safe_price_alias,0001062379,Keyspan Energy,2007-08-24,2026-11-06T19:24:55.883976+00:00,lawcal/sp500-components-history
-LDG,unidentified_legacy_symbol,,,,2026-11-06T20:30:25.793990+00:00,
+LDG,identified_no_safe_price_alias,,LONGS DRUG STORES INC,,2026-11-06T20:30:25.793990+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 LEHMQ,bankruptcy_or_otc_terminal,,,,2026-11-06T20:30:27.245955+00:00,
-MAY,unidentified_legacy_symbol,,,,2026-11-06T20:30:32.893921+00:00,
+MAY,identified_no_safe_price_alias,,MAY DEPARTMENT STORES CO,,2026-11-06T20:30:32.893921+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 MDP,identified_no_safe_price_alias,0000065011,Meredith Corp.,2011-01-03,2026-11-06T20:30:33.466899+00:00,lawcal/sp500-components-history
 MEE,identified_no_safe_price_alias,0000037748,Massey Energy Company,2011-06-01,2026-11-06T20:30:35.467496+00:00,lawcal/sp500-components-history
 MEL,identified_no_safe_price_alias,0000064782,Mellon Bank Corp.,2008-01-22*,2026-11-06T20:30:36.036857+00:00,lawcal/sp500-components-history
 MERQ,bankruptcy_or_otc_terminal,,,,2026-11-06T20:30:37.143259+00:00,
-MKG,unidentified_legacy_symbol,,,,2026-11-06T20:30:40.451592+00:00,
+MKG,identified_no_safe_price_alias,,INTERNATIONAL MINERALS & CHEM CO; IMCERA GROUP INC; INTERNATIONAL AGRIC CORP; MALLINCKRODT INC NEW; MALLINCKRODT GROUP INC,,2026-11-06T20:30:40.451592+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 MNK,identified_no_safe_price_alias,0001567892,Mallinckrodt Plc,2017-07-26,2026-11-06T20:30:41.589871+00:00,lawcal/sp500-components-history
 MOLX,identified_no_safe_price_alias,0000067472,Molex Inc.,2013-12-10,2026-11-06T20:30:42.220548+00:00,lawcal/sp500-components-history
 MTLQQ,bankruptcy_or_otc_terminal,,,,2026-11-06T20:30:44.290062+00:00,
-MYG,unidentified_legacy_symbol,,,,2026-11-06T20:30:47.393629+00:00,
+MYG,identified_no_safe_price_alias,,MAYTAG CORP; MAYTAG CO,,2026-11-06T20:30:47.393629+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 MZIAQ,bankruptcy_or_otc_terminal,,,,2026-11-06T20:30:48.919703+00:00,
 NCC,identified_no_safe_price_alias,0000069970,National City Corp.,2009-03-07*,2026-11-06T20:30:51.170926+00:00,lawcal/sp500-components-history
-NCE,unidentified_legacy_symbol,,,,2026-11-06T20:30:51.750970+00:00,
-NFB,unidentified_legacy_symbol,,,,2026-11-06T20:30:52.912859+00:00,
-NGH,unidentified_legacy_symbol,,,,2026-11-06T20:30:53.417135+00:00,
-NMK,unidentified_legacy_symbol,,,,2026-11-06T20:30:55.684944+00:00,
+NCE,identified_no_safe_price_alias,,PUBLIC SERVICE CO CO; NEW CENTURY ENERGIES INC,,2026-11-06T20:30:51.750970+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+NFB,identified_no_safe_price_alias,,NORTH FORK BANCORPORATION NY; NORTH FORK BANCORPORATION NY INC,,2026-11-06T20:30:52.912859+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+NGH,identified_no_safe_price_alias,,R J R NABISCO HOLDINGS CORP; NABISCO GROUP HOLDING CORP,,2026-11-06T20:30:53.417135+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+NMK,identified_no_safe_price_alias,,NIAGARA MOHAWK POWER CORP; NIAGARA MOHAWK HOLDINGS INC,,2026-11-06T20:30:55.684944+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 NOVL,identified_no_safe_price_alias,0000758004,Novell Inc.,2011-04-27,2026-11-06T20:30:56.324564+00:00,lawcal/sp500-components-history
-NXTL,unidentified_legacy_symbol,,,,2026-11-08T11:39:18.774026+00:00,
+NXTL,identified_no_safe_price_alias,,FLEET CALL INC; NEXTEL COMMUNICATIONS INC,,2026-11-08T11:39:18.774026+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 NYX,identified_no_safe_price_alias,0001368007,NYSE Euronext,2013-11-13,2026-11-08T11:39:19.242725+00:00,lawcal/sp500-components-history
-OAT,unidentified_legacy_symbol,,,,2026-11-08T11:39:19.758297+00:00,
-OK,unidentified_legacy_symbol,,,,2026-11-08T11:39:22.332505+00:00,
+OAT,identified_no_safe_price_alias,,QUAKER OATS CO,,2026-11-08T11:39:19.758297+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+OK,identified_no_safe_price_alias,,OLD KENT FINANCIAL CORP,,2026-11-08T11:39:22.332505+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 OWENQ,bankruptcy_or_otc_terminal,,,,2026-11-08T11:39:23.877898+00:00,
-PDG,unidentified_legacy_symbol,,,,2026-11-08T11:39:28.389422+00:00,
-PGL,unidentified_legacy_symbol,,,,2026-11-08T11:39:30.075882+00:00,
-PHA,unidentified_legacy_symbol,,,,2026-11-08T11:39:31.039197+00:00,
-PNU,unidentified_legacy_symbol,,,,2026-11-08T11:39:33.155684+00:00,
-PRD,unidentified_legacy_symbol,,,,2026-11-08T11:39:33.619502+00:00,
+PDG,identified_no_safe_price_alias,,PLACER DOME INC,,2026-11-08T11:39:28.389422+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+PGL,identified_no_safe_price_alias,,PEOPLES ENERGY CORP; PEOPLES GAS CO; PEOPLES GAS LT & COKE CO,,2026-11-08T11:39:30.075882+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+PHA,identified_no_safe_price_alias,,MONSANTO CHEMICAL CO; PHARMACIA CORP; MONSANTO CO; MONSANTO CHEMICAL WORKS INC,,2026-11-08T11:39:31.039197+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+PNU,identified_no_safe_price_alias,,PHARMACIA & UPJOHN INC,,2026-11-08T11:39:33.155684+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+PRD,identified_no_safe_price_alias,,POLAROID CORP,,2026-11-08T11:39:33.619502+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 PTV,identified_no_safe_price_alias,0001089976,Pactiv Corp.,2010-11-17,2026-11-08T11:39:34.635256+00:00,lawcal/sp500-components-history
-PVN,unidentified_legacy_symbol,,,,2026-11-08T11:39:35.158984+00:00,
-PWJ,unidentified_legacy_symbol,,,,2026-11-08T11:39:35.619479+00:00,
-QTRN,unidentified_legacy_symbol,,,,2026-11-08T11:39:39.373294+00:00,
-RAD,unidentified_legacy_symbol,,,,2026-11-08T11:39:39.897650+00:00,
-RATL,unidentified_legacy_symbol,,,,2026-11-08T11:39:41.012253+00:00,
-RBK,unidentified_legacy_symbol,,,,2026-11-08T11:39:41.515801+00:00,
-RNB,unidentified_legacy_symbol,,,,2026-11-08T11:39:45.422374+00:00,
+PVN,identified_no_safe_price_alias,,PROVIDIAN FINANCIAL CORP,,2026-11-08T11:39:35.158984+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+PWJ,identified_no_safe_price_alias,,PAINE WEBBER INC; PAINE WEBBER JACKSON & CURTIS; PAINE WEBBER GROUP INC,,2026-11-08T11:39:35.619479+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+QTRN,identified_no_safe_price_alias,,QUINTILES TRANSNATIONAL CORP,,2026-11-08T11:39:39.373294+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+RAD,identified_no_safe_price_alias,,RITE AID CORP,,2026-11-08T11:39:39.897650+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+RATL,identified_no_safe_price_alias,,RATIONAL SOFTWARE CORP; VERDIX CORP,,2026-11-08T11:39:41.012253+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+RBK,identified_no_safe_price_alias,,REEBOK INTERNATIONAL LTD,,2026-11-08T11:39:41.515801+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+RNB,identified_no_safe_price_alias,,REPUBLIC NATIONAL BANK N Y; REPUBLIC NEW YORK CORP,,2026-11-08T11:39:45.422374+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 RX,identified_no_safe_price_alias,0001058083,IMS Health Inc.,2010-02-26,2026-11-08T12:45:11.921757+00:00,lawcal/sp500-components-history
-SBL,unidentified_legacy_symbol,,,,2026-11-08T12:45:14.269621+00:00,
-SEBL,unidentified_legacy_symbol,,,,2026-11-08T12:45:15.758715+00:00,
-SFA,unidentified_legacy_symbol,,,,2026-11-08T12:45:17.043269+00:00,
-SGID,unidentified_legacy_symbol,,,,2026-11-08T12:45:17.535104+00:00,
+SBL,identified_no_safe_price_alias,,SYMBOL TECHNOLOGIES INC,,2026-11-08T12:45:14.269621+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+SEBL,identified_no_safe_price_alias,,SIEBEL SYSTEMS INC,,2026-11-08T12:45:15.758715+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+SFA,identified_no_safe_price_alias,,SCIENTIFIC ATLANTA INC,,2026-11-08T12:45:17.043269+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+SGID,identified_no_safe_price_alias,0000802301,Silicon Graphics Inc.,,2026-11-08T12:45:17.535104+00:00,SEC filing https://www.sec.gov/Archives/edgar/data/802301/000119312505221658/d10q.htm
 SLR,identified_no_safe_price_alias,0000835541,Solectron,2007-10-02,2026-11-08T12:45:19.894435+00:00,lawcal/sp500-components-history
-SMS,unidentified_legacy_symbol,,,,2026-11-08T12:45:21.105433+00:00,
-SOTR,unidentified_legacy_symbol,,,,2026-11-08T12:45:23.171675+00:00,
+SMS,identified_no_safe_price_alias,,SHARED MEDICAL SYSTEMS CORP,,2026-11-08T12:45:21.105433+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+SOTR,identified_no_safe_price_alias,,ALABAMA FINANCIAL GROUP INC; SOUTHTRUST CORP; SOUTHERN BANCORPORATION AL,,2026-11-08T12:45:23.171675+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 TLAB,identified_no_safe_price_alias,0000317771,Tellabs Inc.,2011-12-20,2026-11-08T12:45:34.552635+00:00,lawcal/sp500-components-history
-TMC-A,unidentified_legacy_symbol,,,,2026-11-08T12:45:35.012556+00:00,
-TNB,unidentified_legacy_symbol,,,,2026-11-08T12:45:35.928459+00:00,
-TOY,unidentified_legacy_symbol,,,,2026-11-08T12:45:36.454306+00:00,
+TMC-A,identified_no_safe_price_alias,,TIMES MIRROR CO NEW,,2026-11-08T12:45:35.012556+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+TNB,identified_no_safe_price_alias,,THOMAS & BETTS CORP,,2026-11-08T12:45:35.928459+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+TOY,identified_no_safe_price_alias,,TOYS R US INC,,2026-11-08T12:45:36.454306+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 TRB,identified_no_safe_price_alias,0000726513,Tribune Co.,2007-12-20,2026-11-08T12:45:36.905079+00:00,lawcal/sp500-components-history
-TUP,unidentified_legacy_symbol,,,,2026-11-08T12:45:39.860516+00:00,
+TUP,identified_no_safe_price_alias,,TUPPERWARE CORP; TUPPERWARE BRANDS CORP,,2026-11-08T12:45:39.860516+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 TXU,identified_no_safe_price_alias,0001023291,TXU Corp.,2008-01-22*,2026-11-08T12:45:42.560729+00:00,lawcal/sp500-components-history
 UAWGQ,bankruptcy_or_otc_terminal,,,,2026-11-08T12:45:43.014700+00:00,
-UCM,unidentified_legacy_symbol,,,,2026-11-08T12:45:43.592292+00:00,
-UMG,unidentified_legacy_symbol,,,,2026-11-08T12:45:44.038807+00:00,
-UPR,unidentified_legacy_symbol,,,,2026-11-08T12:45:44.551158+00:00,
-USW,unidentified_legacy_symbol,,,,2026-11-08T12:45:45.070891+00:00,
+UCM,identified_no_safe_price_alias,,COMMONWEALTH EDISON CO; UNICOM CORP HOLDING CO,,2026-11-08T12:45:43.592292+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+UMG,identified_no_safe_price_alias,,MEDIAONE GROUP INC,,2026-11-08T12:45:44.038807+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+UPR,identified_no_safe_price_alias,,UNION PACIFIC RES GROUP INC,,2026-11-08T12:45:44.551158+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
+USW,identified_no_safe_price_alias,,U S WEST INC NEW; U S WEST INC,,2026-11-08T12:45:45.070891+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 UVN,identified_no_safe_price_alias,0001017008,Univision Communications,2008-01-22*,2026-11-08T13:51:15.517418+00:00,lawcal/sp500-components-history
 VSTNQ,bankruptcy_or_otc_terminal,,,,2026-11-08T13:51:18.679866+00:00,
 WAMUQ,bankruptcy_or_otc_terminal,,,,2026-11-08T13:51:20.020266+00:00,
 WCOEQ,bankruptcy_or_otc_terminal,,,,2026-11-08T13:51:23.329316+00:00,
 WFT,identified_no_safe_price_alias,0001453090,Weatherford International Ltd.,2009-03-07*,2026-11-08T13:51:25.013757+00:00,lawcal/sp500-components-history
-WLA,unidentified_legacy_symbol,,,,2026-11-08T13:51:26.284892+00:00,
+WLA,identified_no_safe_price_alias,,WARNER LAMBERT PHARMACEUTICAL CO; WARNER HUDNUT INC; WARNER LAMBERT CO,,2026-11-08T13:51:26.284892+00:00,https://wrds-www.wharton.upenn.edu/classroom/sp500-introduction/over-time/
 WNDXQ,bankruptcy_or_otc_terminal,,,,2026-11-08T13:51:28.696290+00:00,
 WWY,identified_no_safe_price_alias,0000108601,Wrigley (Wm) Jr.,2008-11-03*,2026-11-08T13:51:30.673064+00:00,lawcal/sp500-components-history
 WYE,identified_no_safe_price_alias,0000005187,Wyeth,2009-10-18*,2026-11-08T13:51:31.292512+00:00,lawcal/sp500-components-history
